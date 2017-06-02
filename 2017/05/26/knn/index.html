@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="机器学习 python," />
 
 
 
@@ -90,16 +90,19 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="description" content="KNN算法介绍KNN（K Nearest Neighbour, k近邻法）是一种基础的分类算法。分类算法分两个步骤：拟合和预测，首先将使用训练数据进行拟合，然后使用拟合的模型对测试数据进行预测。很多分类方法（比如逻辑回归，支持状态机）会从训练数据中学习得到一个范化的模型，然后使用模型对测试数据进行分类。KNN在拟合的过程只是简单地将输入和输出数据保存下来。分类算法集中在预测步骤中。 KNN算法简单">
+<meta name="keywords" content="机器学习 python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2017/05/04/hello-world/index.html">
+<meta property="og:title" content="使用python实现KNN算法">
+<meta property="og:url" content="http://yoursite.com/2017/05/26/knn/index.html">
 <meta property="og:site_name" content="刘怜苏">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
-<meta property="og:updated_time" content="2017-05-04T11:21:01.000Z">
+<meta property="og:description" content="KNN算法介绍KNN（K Nearest Neighbour, k近邻法）是一种基础的分类算法。分类算法分两个步骤：拟合和预测，首先将使用训练数据进行拟合，然后使用拟合的模型对测试数据进行预测。很多分类方法（比如逻辑回归，支持状态机）会从训练数据中学习得到一个范化的模型，然后使用模型对测试数据进行分类。KNN在拟合的过程只是简单地将输入和输出数据保存下来。分类算法集中在预测步骤中。 KNN算法简单">
+<meta property="og:image" content="http://tuchang-1253208593.costj.myqcloud.com/440px-KnnClassification.svg.png">
+<meta property="og:updated_time" content="2017-05-26T10:54:02.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="使用python实现KNN算法">
+<meta name="twitter:description" content="KNN算法介绍KNN（K Nearest Neighbour, k近邻法）是一种基础的分类算法。分类算法分两个步骤：拟合和预测，首先将使用训练数据进行拟合，然后使用拟合的模型对测试数据进行预测。很多分类方法（比如逻辑回归，支持状态机）会从训练数据中学习得到一个范化的模型，然后使用模型对测试数据进行分类。KNN在拟合的过程只是简单地将输入和输出数据保存下来。分类算法集中在预测步骤中。 KNN算法简单">
+<meta name="twitter:image" content="http://tuchang-1253208593.costj.myqcloud.com/440px-KnnClassification.svg.png">
 
 
 
@@ -127,13 +130,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/05/04/hello-world/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/05/26/knn/"/>
 
 
 
 
 
-  <title>Hello World | 刘怜苏</title>
+  <title>使用python实现KNN算法 | 刘怜苏</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -252,7 +255,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/04/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/26/knn/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Liu Jilong">
@@ -269,7 +272,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hello World</h1>
+          <h1 class="post-title" itemprop="name headline">使用python实现KNN算法</h1>
         
 
         <div class="post-meta">
@@ -281,8 +284,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-04T19:21:01+08:00">
-                2017-05-04
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-26T17:04:19+08:00">
+                2017-05-26
               </time>
             
 
@@ -316,16 +319,13 @@
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
+        <h2 id="KNN算法介绍"><a href="#KNN算法介绍" class="headerlink" title="KNN算法介绍"></a>KNN算法介绍</h2><p>KNN（K Nearest Neighbour, k近邻法）是一种基础的分类算法。<br>分类算法分两个步骤：拟合和预测，<br>首先将使用训练数据进行拟合，<br>然后使用拟合的模型对测试数据进行预测。<br>很多分类方法（比如逻辑回归，支持状态机）会从训练数据中学习得到一个范化的模型，<br>然后使用模型对测试数据进行分类。KNN在拟合的过程只是简单地将输入和输出数据保存下来。<br>分类算法集中在预测步骤中。</p>
+<p>KNN算法简单，直接。给定一个训练数据集。对于测试实例，在训练数据集中寻找到距离测试实例最近的<br>K个实例。这K个实例按分类进行投票，票数最多的分类就是测试数据的分类。</p>
+<p><img src="http://tuchang-1253208593.costj.myqcloud.com/440px-KnnClassification.svg.png" alt=""></p>
+<p>对于上图给出的数据。红色和蓝色点为训练数据集，不同颜色代表两个不同的分类。绿色点为测试实例。<br>在K=3的情况下，实线圈内的三个训练实例是离测试实例最近的，<br>按照KNN的投票方案，绿色测试实例的类别为红色。<br>而在K=5的情况下，则虚线圈内的五个实例进行投票，绿色测试实例的类别为蓝色。</p>
+<h2 id="KNN算法特点"><a href="#KNN算法特点" class="headerlink" title="KNN算法特点"></a>KNN算法特点</h2><h4 id="K的选择"><a href="#K的选择" class="headerlink" title="K的选择"></a>K的选择</h4><p>不同的K值会对分类结果产生影响。选择合适的K值取决于训练数据的特点。<br>较小的K值能更好地拟合训练数据的特点，同时会带来严重的过拟合问题。<br>较大的K值能减少噪声的影响，但是也会削弱类别之间的界限。</p>
+<p>对于具体数据，K的选择通常需要超参数优化来完成。</p>
+<h4 id="距离"><a href="#距离" class="headerlink" title="距离"></a>距离</h4>
       
     </div>
 
@@ -352,6 +352,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/机器学习-python/" rel="tag"># 机器学习 python</a>
+          
+        </div>
+      
 
       
         
@@ -361,15 +367,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2017/05/04/弹幕/" rel="next" title="Mac弹幕库BarrageRenderer代码解读">
+                <i class="fa fa-chevron-left"></i> Mac弹幕库BarrageRenderer代码解读
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/05/04/弹幕/" rel="prev" title="Mac弹幕库BarrageRenderer代码解读">
-                Mac弹幕库BarrageRenderer代码解读 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -441,7 +447,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -454,7 +460,7 @@
             
             <div class="site-state-item site-state-tags">
               
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">标签</span>
               
             </div>
@@ -489,7 +495,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#KNN算法介绍"><span class="nav-number">1.</span> <span class="nav-text">KNN算法介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#KNN算法特点"><span class="nav-number">2.</span> <span class="nav-text">KNN算法特点</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#K的选择"><span class="nav-number">2.0.1.</span> <span class="nav-text">K的选择</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#距离"><span class="nav-number">2.0.2.</span> <span class="nav-text">距离</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>

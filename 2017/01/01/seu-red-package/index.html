@@ -1,0 +1,697 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="2016年12月31日晚，东南大学在九龙湖体育馆举办跨年演唱会。演唱会期间送出了3000个现金红包，同时抢红包的人数在4000人左右。抢红包的流程和编码主要由我负责实现。在这样一个并发环境下，虽然所有的红包都送了出去，但是也暴露出一些问题。就实际情况和出现的问题，做个分析与总结。一是记录这个经历，二来寄希望这些经验能对其他人有所助益。 达人荟接到跨年红包的工作时，团队中有并发经验的孙越没有时间做这">
+<meta property="og:type" content="article">
+<meta property="og:title" content="东大跨年红包记--并发案例分析">
+<meta property="og:url" content="http://yoursite.com/2017/01/01/seu-red-package/index.html">
+<meta property="og:site_name" content="刘怜苏">
+<meta property="og:description" content="2016年12月31日晚，东南大学在九龙湖体育馆举办跨年演唱会。演唱会期间送出了3000个现金红包，同时抢红包的人数在4000人左右。抢红包的流程和编码主要由我负责实现。在这样一个并发环境下，虽然所有的红包都送了出去，但是也暴露出一些问题。就实际情况和出现的问题，做个分析与总结。一是记录这个经历，二来寄希望这些经验能对其他人有所助益。 达人荟接到跨年红包的工作时，团队中有并发经验的孙越没有时间做这">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2448550-bd13b82859920238.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2017-06-02T09:16:25.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="东大跨年红包记--并发案例分析">
+<meta name="twitter:description" content="2016年12月31日晚，东南大学在九龙湖体育馆举办跨年演唱会。演唱会期间送出了3000个现金红包，同时抢红包的人数在4000人左右。抢红包的流程和编码主要由我负责实现。在这样一个并发环境下，虽然所有的红包都送了出去，但是也暴露出一些问题。就实际情况和出现的问题，做个分析与总结。一是记录这个经历，二来寄希望这些经验能对其他人有所助益。 达人荟接到跨年红包的工作时，团队中有并发经验的孙越没有时间做这">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/2448550-bd13b82859920238.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/01/01/seu-red-package/"/>
+
+
+
+
+
+  <title>东大跨年红包记--并发案例分析 | 刘怜苏</title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">刘怜苏</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/01/01/seu-red-package/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Liu Jilong">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="刘怜苏">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">东大跨年红包记--并发案例分析</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-01-01T20:23:00+08:00">
+                2017-01-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>2016年12月31日晚，东南大学在九龙湖体育馆举办跨年演唱会。演唱会期间送出了3000个现金红包，同时抢红包的人数在4000人左右。抢红包的流程和编码主要由我负责实现。在这样一个并发环境下，虽然所有的红包都送了出去，但是也暴露出一些问题。就实际情况和出现的问题，做个分析与总结。一是记录这个经历，二来寄希望这些经验能对其他人有所助益。</p>
+<p>达人荟接到跨年红包的工作时，团队中有并发经验的孙越没有时间做这个事情，因而开发的工作交给我了。我在这个时候没有前端和后台开发经验，对并发量也没有清晰的认识，实现抢红包的时间限制（十天）也很紧张。幸运的是，有李盼辉孙越这些同伴们一同讨论解决问题，我们按时完成了开发，经过了几轮测试，流程与逻辑上确定没有问题。做了压力测试，并发量能满足现场的人数。但是，<strong>压力测试很难完全模拟实际情况，压力测试的结果只能作为参考而不能作为判断的依据。</strong></p>
+<hr>
+<p>抢红包的工作流程如下图所示：<br><img src="http://upload-images.jianshu.io/upload_images/2448550-bd13b82859920238.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>代码分四个部分</p>
+<ol>
+<li>抢红包前端网页</li>
+<li>入口服务器(Python进程)：通知网页是否跳转到抢红包页面</li>
+<li>红包服务器(Python进程)：接受抢红包请求，与微信红包服务器交互发红包</li>
+<li>管理员界面程序：发送开始抢红包命令，定时（1s）拉取服务器状态在界面上展示</li>
+</ol>
+<p>正常的工作流程：</p>
+<ol>
+<li>终端开始加载网页<font color="red">(1)</font>,向入口服务器询问入口是否开放<font color="red">(3)</font></li>
+<li>管理员向入口服务器和红包服务器发送开始抢红包的命令<font color="red">(2)</font></li>
+<li>终端网页进入抢红包页面，向红包服务器发红包请求<font color="red">(4)</font></li>
+<li>红包服务器判断通过后，调用微信红包接口，发放红包<font color="red">(5)</font></li>
+<li>管理员界面会定时向入口服务器和红包服务器发请求获取服务器状态<font color="red">(6)</font></li>
+</ol>
+<p>在这样的流程中，针对较高的并发量，我们做了以下考虑：</p>
+<ol>
+<li>主要的网络请求是入口查询请求和抢红包请求。将这两个请求分开处理并部署在两台主机上。</li>
+<li>为前端的静态资源设置了缓存一天，避免重复下载图片。</li>
+<li>对微信红包服务器的请求<font color="red">(5)</font>做了异步</li>
+<li>管理员页面定时更新服务器状态，及时发现问题。</li>
+</ol>
+<hr>
+<p>现场的实际情况是这样的：</p>
+<p>观众视角：</p>
+<p>主持人宣布开始倒计时，点击进入网页，网页特别卡，一直加载中，白屏。有人一直等着，有人放弃了。过了一会发现不那么卡了，进去开始抢红包，抢到了/没抢到。</p>
+<p>我的视角：</p>
+<p>主持人宣布开始倒计时，我点下了开始按钮，将开始抢红包的请求发送给服务器。此时周围不停地传来网页打不开的声音，我的管理界面也卡死了，不再刷新服务器的状态。</p>
+<p>怀疑入口服务器崩溃了，进而联想到所有人都不能进入抢红包页面，这意味着抢红包程序的彻底失效。高压状态下的异常情况导致失去了正常的判断力。唯一能做的就是在一个卡死的界面上点击开始按钮而不确定到底发生了什么。过了一段时间，周围开始传出来红包抢到了的消息。</p>
+<p>这时我也基本恢复了判断力，和李盼辉一起确认当前的状态。进入服务器发现后台正常，第一轮红包已经发送完毕。回头看管理界面程序，管理界面程序已经恢复正常，显示红包已经发送完毕。我们检查一遍代码逻辑，没有发现问题，只能暂时归结为网络请求抛出了异常。判断管理界面不可靠，将开始抢红包的请求从界面程序里抽取出来，下一轮用命令行发送开始请求。</p>
+<hr>
+<p>活动结束后，看日志发现：第一轮红包时，入口服务器平均每秒钟收到40个请求，平均每个请求的处理时间是1ms。入口服务器并没有满负荷跑，现场发出的请求个数也肯定多于40个每秒，那么请求就某个地方阻塞了。</p>
+<p>回看服务器的部署，前端网页和入口服务器部署在一台主机上，网页里的所有图片也都从这台主机获取！而且加载网页和发请求是串行的。网页加载完毕才会发出请求。</p>
+<p>静态资源的缓存在第一波抢红包中没有起到任何作用，因为大多数观众是第一次打开网页。网页里所有的内容都要全部加载一遍。HTML文档的数据量小于1KB，而所有图片的大小共500KB，全场4000人，同时抢红包的人数算2000人，一共1GB的数据量需要从主机传输出去。那个时刻的网络非常的繁忙。</p>
+<p>观众手机获取不了网页的背景图，网页自然是白屏的。管理员的界面程序在如此繁忙的网络环境下拉取服务器状态，自然会阻塞超时。界面程序只有一个后台线程进行网络请求，阻塞之后，主线程的界面没有数据来源自然会卡死，获取不到两个服务器的状态，导致管理员出现对服务器状态不确定不可控的状态。</p>
+<p>对于高并发的情况，需要注意：<strong>每个网络请求都要考虑执行时间，如果这个请求阻塞了会有多大的影响？</strong>在我的控制界面程序中，单后台线程一旦阻塞，所有的网络请求都玩完，界面卡死，控制程序失效。这类漏洞，平时测试是发现不了的，只会在并发环境下体现出来。</p>
+<p>找到原因后，解决办法也很简单，把图片等静态资源托管到第三方服务器。对于每个用户，500KB的图片从第三方主机获取，我们的主机只负责不到1KB的HTML和接口数据。在跨年之前测试的入口服务器的并发量是每秒600次请求。如果没有图片流量，服务器完全能应付这样的并发量。</p>
+<p>事实就是这么的简单，直接。过多的图片数据把主机网络堵塞了。</p>
+<p>因为缓存，忽略了这些图片。因为这些图片导致了网页的卡卡卡。只需要做很少的工作就能把卡卡卡消灭，而我却没有意识到。<strong>编码工作培养的是对数据状态的敏感度，比如数据库，多线程同步，异常等等。而并发状态下还需要对机器的网络状态敏感，主机需要通过网络发送哪些数据，可能的网络状态是什么，堵塞还是畅通。</strong>这个教训我会记住的。</p>
+<p>总结一下，这些经验需要记住：</p>
+<ol>
+<li><strong>压力测试要尽可能模拟真实的情况，测试结果才能作为参考依据。</strong></li>
+<li><strong>合理处理好图片等静态资源，静态资源的大小会远大于路由请求的数据量。</strong></li>
+<li><strong>每个网络请求都要考虑执行时间，如果这个请求超时了会有多大的影响？</strong></li>
+<li><strong>编码工作培养的是对数据状态的敏感度，比如数据库，多线程同步，异常等等。而并发状态下还需要对机器的网络状态敏感，主机需要通过网络发送哪些数据，可能的网络状态是什么，堵塞还是畅通。</strong></li>
+</ol>
+<p>令人开心的是：除了图片流量导致的卡卡卡之外，程序运行一切正常。卡卡卡之后所有红包发送完毕。代码我已经托管在<a href="https://github.com/mutexliu/WeiXinRedPackage" target="_blank" rel="external">Github</a>上，有类似微信红包开发需求的可以参考。</p>
+<p>最后，感谢达人荟的各位小伙伴们，跟你们一起做事很开心。感谢东南大学跨年晚会和达人荟给了我这样一个深刻又难以忘记的跨年夜。这样度过在东大的第七个也是最后一个跨年夜，真是一番奇妙的经历。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/08/21/android-savestate/" rel="next" title="Android中SaveState原理分析">
+                <i class="fa fa-chevron-left"></i> Android中SaveState原理分析
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/05/04/弹幕/" rel="prev" title="Mac弹幕库BarrageRenderer代码解读">
+                Mac弹幕库BarrageRenderer代码解读 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="Liu Jilong" />
+          <p class="site-author-name" itemprop="name">Liu Jilong</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Liu Jilong</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

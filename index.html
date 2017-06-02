@@ -250,6 +250,123 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/26/knn/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Liu Jilong">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="刘怜苏">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/05/26/knn/" itemprop="url">使用python实现KNN算法</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-26T17:04:19+08:00">
+                2017-05-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="KNN算法介绍"><a href="#KNN算法介绍" class="headerlink" title="KNN算法介绍"></a>KNN算法介绍</h2><p>KNN（K Nearest Neighbour, k近邻法）是一种基础的分类算法。<br>分类算法分两个步骤：拟合和预测，<br>首先将使用训练数据进行拟合，<br>然后使用拟合的模型对测试数据进行预测。<br>很多分类方法（比如逻辑回归，支持状态机）会从训练数据中学习得到一个范化的模型，<br>然后使用模型对测试数据进行分类。KNN在拟合的过程只是简单地将输入和输出数据保存下来。<br>分类算法集中在预测步骤中。</p>
+<p>KNN算法简单，直接。给定一个训练数据集。对于测试实例，在训练数据集中寻找到距离测试实例最近的<br>K个实例。这K个实例按分类进行投票，票数最多的分类就是测试数据的分类。</p>
+<p><img src="http://tuchang-1253208593.costj.myqcloud.com/440px-KnnClassification.svg.png" alt=""></p>
+<p>对于上图给出的数据。红色和蓝色点为训练数据集，不同颜色代表两个不同的分类。绿色点为测试实例。<br>在K=3的情况下，实线圈内的三个训练实例是离测试实例最近的，<br>按照KNN的投票方案，绿色测试实例的类别为红色。<br>而在K=5的情况下，则虚线圈内的五个实例进行投票，绿色测试实例的类别为蓝色。</p>
+<h2 id="KNN算法特点"><a href="#KNN算法特点" class="headerlink" title="KNN算法特点"></a>KNN算法特点</h2><h4 id="K的选择"><a href="#K的选择" class="headerlink" title="K的选择"></a>K的选择</h4><p>不同的K值会对分类结果产生影响。选择合适的K值取决于训练数据的特点。<br>较小的K值能更好地拟合训练数据的特点，同时会带来严重的过拟合问题。<br>较大的K值能减少噪声的影响，但是也会削弱类别之间的界限。</p>
+<p>对于具体数据，K的选择通常需要超参数优化来完成。</p>
+<h4 id="距离"><a href="#距离" class="headerlink" title="距离"></a>距离</h4>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/04/弹幕/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -391,7 +508,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/04/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/01/01/seu-red-package/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Liu Jilong">
@@ -410,7 +527,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/05/04/hello-world/" itemprop="url">Hello World</a></h1>
+                <a class="post-title-link" href="/2017/01/01/seu-red-package/" itemprop="url">东大跨年红包记--并发案例分析</a></h1>
         
 
         <div class="post-meta">
@@ -422,8 +539,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-04T19:21:01+08:00">
-                2017-05-04
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-01-01T20:23:00+08:00">
+                2017-01-01
               </time>
             
 
@@ -459,15 +576,435 @@
       
         
           
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+            <p>2016年12月31日晚，东南大学在九龙湖体育馆举办跨年演唱会。演唱会期间送出了3000个现金红包，同时抢红包的人数在4000人左右。抢红包的流程和编码主要由我负责实现。在这样一个并发环境下，虽然所有的红包都送了出去，但是也暴露出一些问题。就实际情况和出现的问题，做个分析与总结。一是记录这个经历，二来寄希望这些经验能对其他人有所助益。</p>
+<p>达人荟接到跨年红包的工作时，团队中有并发经验的孙越没有时间做这个事情，因而开发的工作交给我了。我在这个时候没有前端和后台开发经验，对并发量也没有清晰的认识，实现抢红包的时间限制（十天）也很紧张。幸运的是，有李盼辉孙越这些同伴们一同讨论解决问题，我们按时完成了开发，经过了几轮测试，流程与逻辑上确定没有问题。做了压力测试，并发量能满足现场的人数。但是，<strong>压力测试很难完全模拟实际情况，压力测试的结果只能作为参考而不能作为判断的依据。</strong></p>
+<hr>
+<p>抢红包的工作流程如下图所示：<br><img src="http://upload-images.jianshu.io/upload_images/2448550-bd13b82859920238.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>代码分四个部分</p>
+<ol>
+<li>抢红包前端网页</li>
+<li>入口服务器(Python进程)：通知网页是否跳转到抢红包页面</li>
+<li>红包服务器(Python进程)：接受抢红包请求，与微信红包服务器交互发红包</li>
+<li>管理员界面程序：发送开始抢红包命令，定时（1s）拉取服务器状态在界面上展示</li>
+</ol>
+<p>正常的工作流程：</p>
+<ol>
+<li>终端开始加载网页<font color="red">(1)</font>,向入口服务器询问入口是否开放<font color="red">(3)</font></li>
+<li>管理员向入口服务器和红包服务器发送开始抢红包的命令<font color="red">(2)</font></li>
+<li>终端网页进入抢红包页面，向红包服务器发红包请求<font color="red">(4)</font></li>
+<li>红包服务器判断通过后，调用微信红包接口，发放红包<font color="red">(5)</font></li>
+<li>管理员界面会定时向入口服务器和红包服务器发请求获取服务器状态<font color="red">(6)</font></li>
+</ol>
+<p>在这样的流程中，针对较高的并发量，我们做了以下考虑：</p>
+<ol>
+<li>主要的网络请求是入口查询请求和抢红包请求。将这两个请求分开处理并部署在两台主机上。</li>
+<li>为前端的静态资源设置了缓存一天，避免重复下载图片。</li>
+<li>对微信红包服务器的请求<font color="red">(5)</font>做了异步</li>
+<li>管理员页面定时更新服务器状态，及时发现问题。</li>
+</ol>
+<hr>
+<p>现场的实际情况是这样的：</p>
+<p>观众视角：</p>
+<p>主持人宣布开始倒计时，点击进入网页，网页特别卡，一直加载中，白屏。有人一直等着，有人放弃了。过了一会发现不那么卡了，进去开始抢红包，抢到了/没抢到。</p>
+<p>我的视角：</p>
+<p>主持人宣布开始倒计时，我点下了开始按钮，将开始抢红包的请求发送给服务器。此时周围不停地传来网页打不开的声音，我的管理界面也卡死了，不再刷新服务器的状态。</p>
+<p>怀疑入口服务器崩溃了，进而联想到所有人都不能进入抢红包页面，这意味着抢红包程序的彻底失效。高压状态下的异常情况导致失去了正常的判断力。唯一能做的就是在一个卡死的界面上点击开始按钮而不确定到底发生了什么。过了一段时间，周围开始传出来红包抢到了的消息。</p>
+<p>这时我也基本恢复了判断力，和李盼辉一起确认当前的状态。进入服务器发现后台正常，第一轮红包已经发送完毕。回头看管理界面程序，管理界面程序已经恢复正常，显示红包已经发送完毕。我们检查一遍代码逻辑，没有发现问题，只能暂时归结为网络请求抛出了异常。判断管理界面不可靠，将开始抢红包的请求从界面程序里抽取出来，下一轮用命令行发送开始请求。</p>
+<hr>
+<p>活动结束后，看日志发现：第一轮红包时，入口服务器平均每秒钟收到40个请求，平均每个请求的处理时间是1ms。入口服务器并没有满负荷跑，现场发出的请求个数也肯定多于40个每秒，那么请求就某个地方阻塞了。</p>
+<p>回看服务器的部署，前端网页和入口服务器部署在一台主机上，网页里的所有图片也都从这台主机获取！而且加载网页和发请求是串行的。网页加载完毕才会发出请求。</p>
+<p>静态资源的缓存在第一波抢红包中没有起到任何作用，因为大多数观众是第一次打开网页。网页里所有的内容都要全部加载一遍。HTML文档的数据量小于1KB，而所有图片的大小共500KB，全场4000人，同时抢红包的人数算2000人，一共1GB的数据量需要从主机传输出去。那个时刻的网络非常的繁忙。</p>
+<p>观众手机获取不了网页的背景图，网页自然是白屏的。管理员的界面程序在如此繁忙的网络环境下拉取服务器状态，自然会阻塞超时。界面程序只有一个后台线程进行网络请求，阻塞之后，主线程的界面没有数据来源自然会卡死，获取不到两个服务器的状态，导致管理员出现对服务器状态不确定不可控的状态。</p>
+<p>对于高并发的情况，需要注意：<strong>每个网络请求都要考虑执行时间，如果这个请求阻塞了会有多大的影响？</strong>在我的控制界面程序中，单后台线程一旦阻塞，所有的网络请求都玩完，界面卡死，控制程序失效。这类漏洞，平时测试是发现不了的，只会在并发环境下体现出来。</p>
+<p>找到原因后，解决办法也很简单，把图片等静态资源托管到第三方服务器。对于每个用户，500KB的图片从第三方主机获取，我们的主机只负责不到1KB的HTML和接口数据。在跨年之前测试的入口服务器的并发量是每秒600次请求。如果没有图片流量，服务器完全能应付这样的并发量。</p>
+<p>事实就是这么的简单，直接。过多的图片数据把主机网络堵塞了。</p>
+<p>因为缓存，忽略了这些图片。因为这些图片导致了网页的卡卡卡。只需要做很少的工作就能把卡卡卡消灭，而我却没有意识到。<strong>编码工作培养的是对数据状态的敏感度，比如数据库，多线程同步，异常等等。而并发状态下还需要对机器的网络状态敏感，主机需要通过网络发送哪些数据，可能的网络状态是什么，堵塞还是畅通。</strong>这个教训我会记住的。</p>
+<p>总结一下，这些经验需要记住：</p>
+<ol>
+<li><strong>压力测试要尽可能模拟真实的情况，测试结果才能作为参考依据。</strong></li>
+<li><strong>合理处理好图片等静态资源，静态资源的大小会远大于路由请求的数据量。</strong></li>
+<li><strong>每个网络请求都要考虑执行时间，如果这个请求超时了会有多大的影响？</strong></li>
+<li><strong>编码工作培养的是对数据状态的敏感度，比如数据库，多线程同步，异常等等。而并发状态下还需要对机器的网络状态敏感，主机需要通过网络发送哪些数据，可能的网络状态是什么，堵塞还是畅通。</strong></li>
+</ol>
+<p>令人开心的是：除了图片流量导致的卡卡卡之外，程序运行一切正常。卡卡卡之后所有红包发送完毕。代码我已经托管在<a href="https://github.com/mutexliu/WeiXinRedPackage" target="_blank" rel="external">Github</a>上，有类似微信红包开发需求的可以参考。</p>
+<p>最后，感谢达人荟的各位小伙伴们，跟你们一起做事很开心。感谢东南大学跨年晚会和达人荟给了我这样一个深刻又难以忘记的跨年夜。这样度过在东大的第七个也是最后一个跨年夜，真是一番奇妙的经历。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/08/21/android-savestate/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Liu Jilong">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="刘怜苏">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/08/21/android-savestate/" itemprop="url">Android中SaveState原理分析</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-08-21T18:02:18+08:00">
+                2016-08-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>在Activity被回收之前，系统会调用<code>Activity#onSaveInstanceState(Bundle outState)</code>来保存View的状态到传入的<code>outState</code>对象中。<br>在Activity被重新创建时，<code>Activity#onCreate(Bundle savedInstanceState)</code>和<code>Activity#onRestoreInstanceState(Bundle savedInstanceState)</code>会传入保存的状态信息并恢复View的状态。<br>用户也可以重载<code>Activity#onSaveInstanceState()</code>方法来保存额外的Activity状态，并在<code>Activity.onCreate()</code>或者<code>Activity#onRestoreInstanceState（）</code>获取这些状态。<br>这里主要看View的状态是怎么保存和重新获取的。</p>
+<p>先说一下Bundle类，在Android代码里的注释是：<br>A mapping from String values to various Parcelable types.<br>可以简单把Bundle看成一个Map<string, object="">，其中Object都实现了Parcelable接口。Bundle类有一系列的set和get方法用来操作Map中的值。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onSaveInstanceState</span><span class="params">(Bundle outState)</span> </span>&#123;</div><div class="line">    outState.putBundle(WINDOW_HIERARCHY_TAG, mWindow.saveHierarchyState());</div><div class="line">    Parcelable p = mFragments.saveAllState();</div><div class="line">    <span class="keyword">if</span> (p != <span class="keyword">null</span>) &#123;</div><div class="line">        outState.putParcelable(FRAGMENTS_TAG, p);</div><div class="line">    &#125;</div><div class="line">    getApplication().dispatchActivitySaveInstanceState(<span class="keyword">this</span>, outState);</div><div class="line">&#125;</div></pre></td></tr></table></figure></string,></p>
+<p>这个方法做了三件事，1.保存Activity对应的Window的State信息，并存放在outState中，2.保存所有Fragements的信息，如果不为零，也存放在outState中，3.调用外部注册的一些回调方法。保存Fragments的信息是通过保存Fragment的根View的状态实现的，这和保存Window的State信息类似。所以看<code>mWindow.saveHierarchyState()</code>方法，这里mWindow是一个PhoneWindow对象，找到<code>PhoneWindow#saveHierarchyState()</code>方法：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> Bundle <span class="title">saveHierarchyState</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="comment">//step 1:</span></div><div class="line">    Bundle outState = <span class="keyword">new</span> Bundle();</div><div class="line">    <span class="keyword">if</span> (mContentParent == <span class="keyword">null</span>) &#123;</div><div class="line">        <span class="keyword">return</span> outState;</div><div class="line">    &#125;</div><div class="line">    <span class="comment">// step 2: save View states</span></div><div class="line">    SparseArray&lt;Parcelable&gt; states = <span class="keyword">new</span> SparseArray&lt;Parcelable&gt;();</div><div class="line">    mContentParent.saveHierarchyState(states);</div><div class="line">    outState.putSparseParcelableArray(VIEWS_TAG, states);</div><div class="line"></div><div class="line">    <span class="comment">// step 3: save the focused view id</span></div><div class="line">    View focusedView = mContentParent.findFocus();</div><div class="line">    <span class="keyword">if</span> (focusedView != <span class="keyword">null</span>) &#123;</div><div class="line">        <span class="keyword">if</span> (focusedView.getId() != View.NO_ID) &#123;</div><div class="line">            outState.putInt(FOCUSED_ID_TAG, focusedView.getId());</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            <span class="keyword">if</span> (<span class="keyword">false</span>) &#123;</div><div class="line">                Log.d(TAG, <span class="string">"couldn't save which view has focus because the focused view "</span></div><div class="line">                        + focusedView + <span class="string">" has no id."</span>);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">// step 4: save the panels state</span></div><div class="line">    SparseArray&lt;Parcelable&gt; panelStates = <span class="keyword">new</span> SparseArray&lt;Parcelable&gt;();</div><div class="line">    savePanelState(panelStates);</div><div class="line">    <span class="keyword">if</span> (panelStates.size() &gt; <span class="number">0</span>) &#123;</div><div class="line">        outState.putSparseParcelableArray(PANELS_TAG, panelStates);</div><div class="line">    &#125;</div><div class="line">    <span class="comment">// step 5: save actionBar state</span></div><div class="line">    <span class="keyword">if</span> (mDecorContentParent != <span class="keyword">null</span>) &#123;</div><div class="line">        SparseArray&lt;Parcelable&gt; actionBarStates = <span class="keyword">new</span> SparseArray&lt;Parcelable&gt;();</div><div class="line">        mDecorContentParent.saveToolbarHierarchyState(actionBarStates);</div><div class="line">        outState.putSparseParcelableArray(ACTION_BAR_TAG, actionBarStates);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">return</span> outState;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>这个方法依次做了这些事情：<br>1.创建Bundle对象用来返回，判断Window是否有对应的mContentParent这个View对象，如果没有直接返回<br>2.保存View的信息<br>3.保存当前View焦点的信息<br>4.保存抽屉信息<br>5.保存ActionBar信息。<br>我们关注第二步保存View信息: <code>mContentParent.saveHierarchyState(states);</code>.这里<code>states</code>是一个<code>SparseArray&lt;Parcelable&gt;</code>对象，所有View信息都会保存在<code>states</code>中。<code>SparseArray</code>可以理解为Map<integer,object>,是Android系统为了优化内存创建的类。<br>看一下<code>View#saveHierarchyState(SparseArray&lt;Parcelable&gt; container)</code>:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">saveHierarchyState</span><span class="params">(SparseArray&lt;Parcelable&gt; container)</span> </span>&#123;</div><div class="line">    dispatchSaveInstanceState(container);</div><div class="line">&#125;</div></pre></td></tr></table></figure></integer,object></p>
+<p>直接调用了<code>View#dispatchSaveInstanceState(SparseArray&lt;Parcelable&gt; container)</code>:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">dispatchSaveInstanceState</span><span class="params">(SparseArray&lt;Parcelable&gt; container)</span> </span>&#123;</div><div class="line">    <span class="keyword">if</span> (mID != NO_ID &amp;&amp; (mViewFlags &amp; SAVE_DISABLED_MASK) == <span class="number">0</span>) &#123;</div><div class="line">        mPrivateFlags &amp;= ~PFLAG_SAVE_STATE_CALLED;</div><div class="line">        Parcelable state = onSaveInstanceState();</div><div class="line">        <span class="keyword">if</span> ((mPrivateFlags &amp; PFLAG_SAVE_STATE_CALLED) == <span class="number">0</span>) &#123;</div><div class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> IllegalStateException(</div><div class="line">                    <span class="string">"Derived class did not call super.onSaveInstanceState()"</span>);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span> (state != <span class="keyword">null</span>) &#123;</div><div class="line">            <span class="comment">// Log.i("View", "Freezing #" + Integer.toHexString(mID)</span></div><div class="line">            <span class="comment">// + ": " + state);</span></div><div class="line">            container.put(mID, state);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>检查一下View是否设置了ID，如果没有id直接返回。这里我们可以看到，如果View没有设置id，是不会保存它的状态的。设置了ID之后，获取状态，并将状态以ID为key存储在<code>SparseArray</code>中。这里可以看出，如果View树中两个View的id相同，那么后一个View的<code>SavedState</code>会覆盖前一个<code>SavedState</code>。当然这种情况下<code>findViewById()</code>也会出问题。<br>保存View状态是在<code>onSaveInstanceState()</code>中实现的：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">protected</span> Parcelable <span class="title">onSaveInstanceState</span><span class="params">()</span> </span>&#123;</div><div class="line">    mPrivateFlags |= PFLAG_SAVE_STATE_CALLED;</div><div class="line">    <span class="keyword">if</span> (mStartActivityRequestWho != <span class="keyword">null</span>) &#123;</div><div class="line">        BaseSavedState state = <span class="keyword">new</span> BaseSavedState(AbsSavedState.EMPTY_STATE);</div><div class="line">        state.mStartActivityRequestWhoSaved = mStartActivityRequestWho;</div><div class="line">        <span class="keyword">return</span> state;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> BaseSavedState.EMPTY_STATE;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>这个方法检查了一下<code>mStartActivityRequestWho</code>这个String对象是否为null，<code>mStartActivityRequestWho</code>这个对象只有在调用了<code>View#startActivityForResult</code>时才会设置，这时标记一下state中的状态，为null时，直接返回一个空状态。<br>在View类中保存状态里用了三个方法，其中<code>saveHierachyState()</code>方法直接传递给了<code>dispatchSaveInstanceState()</code>方法。<code>dispatchSaveInstanceState()</code>用来分发保存状态的行为，这个方法的默认行为是在有ID的情况下保存自身的state，没有id的情况下什么都不做。所以ViewGroup可以选择重写这个方法，将保存状态的行为分发到子类中。<code>onSaveInstanceState()</code>方法用来具体地保存当前View的状态，自定义View可以选择重写这个方法。</p>
+<p>看一下<code>ViewGroup#dispatchSaveInstanceState()</code>方法<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">dispatchSaveInstanceState</span><span class="params">(SparseArray&lt;Parcelable&gt; container)</span> </span>&#123;</div><div class="line">    <span class="keyword">super</span>.dispatchSaveInstanceState(container);</div><div class="line">    <span class="keyword">final</span> <span class="keyword">int</span> count = mChildrenCount;</div><div class="line">    <span class="keyword">final</span> View[] children = mChildren;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; count; i++) &#123;</div><div class="line">        View c = children[i];</div><div class="line">        <span class="keyword">if</span> ((c.mViewFlags &amp; PARENT_SAVE_DISABLED_MASK) != PARENT_SAVE_DISABLED) &#123;</div><div class="line">            c.dispatchSaveInstanceState(container);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>首先调用<code>View#dispatchSaveInstanceState()</code>保存自身的状态，然后遍历子View，调用对应的<code>dispatchSaveInstanceState()</code>方法，这里实现的View树的遍历。<br>看一下<code>TextView#onSaveInstanceState()</code>是怎么保存状态的：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> Parcelable <span class="title">onSaveInstanceState</span><span class="params">()</span> </span>&#123;</div><div class="line">       Parcelable superState = <span class="keyword">super</span>.onSaveInstanceState();</div><div class="line"></div><div class="line">       <span class="comment">// Save state if we are forced to</span></div><div class="line">       <span class="keyword">boolean</span> save = mFreezesText;</div><div class="line">       <span class="keyword">int</span> start = <span class="number">0</span>;</div><div class="line">       <span class="keyword">int</span> end = <span class="number">0</span>;</div><div class="line"></div><div class="line">       <span class="keyword">if</span> (mText != <span class="keyword">null</span>) &#123;</div><div class="line">           start = getSelectionStart();</div><div class="line">           end = getSelectionEnd();</div><div class="line">           <span class="keyword">if</span> (start &gt;= <span class="number">0</span> || end &gt;= <span class="number">0</span>) &#123;</div><div class="line">               <span class="comment">// Or save state if there is a selection</span></div><div class="line">               save = <span class="keyword">true</span>;</div><div class="line">           &#125;</div><div class="line">       &#125;</div><div class="line"></div><div class="line">       <span class="keyword">if</span> (save) &#123;</div><div class="line">           SavedState ss = <span class="keyword">new</span> SavedState(superState);</div><div class="line">           <span class="comment">// XXX Should also save the current scroll position!</span></div><div class="line">           ss.selStart = start;</div><div class="line">           ss.selEnd = end;</div><div class="line"></div><div class="line">           <span class="keyword">if</span> (mText <span class="keyword">instanceof</span> Spanned) &#123;</div><div class="line">               Spannable sp = <span class="keyword">new</span> SpannableStringBuilder(mText);</div><div class="line"></div><div class="line">               <span class="keyword">if</span> (mEditor != <span class="keyword">null</span>) &#123;</div><div class="line">                   removeMisspelledSpans(sp);</div><div class="line">                   sp.removeSpan(mEditor.mSuggestionRangeSpan);</div><div class="line">               &#125;</div><div class="line"></div><div class="line">               ss.text = sp;</div><div class="line">           &#125; <span class="keyword">else</span> &#123;</div><div class="line">               ss.text = mText.toString();</div><div class="line">           &#125;</div><div class="line"></div><div class="line">           <span class="keyword">if</span> (isFocused() &amp;&amp; start &gt;= <span class="number">0</span> &amp;&amp; end &gt;= <span class="number">0</span>) &#123;</div><div class="line">               ss.frozenWithFocus = <span class="keyword">true</span>;</div><div class="line">           &#125;</div><div class="line"></div><div class="line">           ss.error = getError();</div><div class="line"></div><div class="line">           <span class="keyword">if</span> (mEditor != <span class="keyword">null</span>) &#123;</div><div class="line">               ss.editorState = mEditor.saveInstanceState();</div><div class="line">           &#125;</div><div class="line">           <span class="keyword">return</span> ss;</div><div class="line">       &#125;</div><div class="line"></div><div class="line">       <span class="keyword">return</span> superState;</div><div class="line">   &#125;</div></pre></td></tr></table></figure></p>
+<p>首先判断TextView是否需要保存状态，如果mFreezesText设置为true，或者TextView处于被选中的状态，那么需要保存状态。不许要保存保存状态的话直接返回<code>super.onSaveInstanceState()</code>.<br>TextView中有个内部类SavedState用来表示状态，将对应的状态设置好之后直接返回即可。</p>
+<p>至此，整个保存状态的过程已经走完，总结一下：<br>1.在Activity被回收时，会触发一个SaveState的事件。<br>2.跟其他的事件一样，SaveState事件从Activity-&gt;Window-&gt;View传递到最大的View，然后遍历View树保存状态<br>3.状态保存在一个SparseArray中，以View的ID作为key。<br>4.自定义View可以重载<code>onSaveInstanceState()</code>来保存自己的状态，参考TextView的实现方法。<br>5.</p>
+<p>Restore的过程：<code>Activity#onRestoreInstanceState()</code>方法：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onRestoreInstanceState</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">    <span class="keyword">if</span> (mWindow != <span class="keyword">null</span>) &#123;</div><div class="line">        Bundle windowState = savedInstanceState.getBundle(WINDOW_HIERARCHY_TAG);</div><div class="line">        <span class="keyword">if</span> (windowState != <span class="keyword">null</span>) &#123;</div><div class="line">            mWindow.restoreHierarchyState(windowState);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>跟保存的过程一样，传递到<code>Window#restoreHierarchyState()</code>方法中：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">restoreHierarchyState</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">    <span class="comment">// step 1.</span></div><div class="line">    <span class="keyword">if</span> (mContentParent == <span class="keyword">null</span>) &#123;</div><div class="line">        <span class="keyword">return</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="comment">// step 2.</span></div><div class="line">    SparseArray&lt;Parcelable&gt; savedStates</div><div class="line">            = savedInstanceState.getSparseParcelableArray(VIEWS_TAG);</div><div class="line">    <span class="keyword">if</span> (savedStates != <span class="keyword">null</span>) &#123;</div><div class="line">        mContentParent.restoreHierarchyState(savedStates);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">// step 3. restore the focused view</span></div><div class="line">    <span class="keyword">int</span> focusedViewId = savedInstanceState.getInt(FOCUSED_ID_TAG, View.NO_ID);</div><div class="line">    <span class="keyword">if</span> (focusedViewId != View.NO_ID) &#123;</div><div class="line">        View needsFocus = mContentParent.findViewById(focusedViewId);</div><div class="line">        <span class="keyword">if</span> (needsFocus != <span class="keyword">null</span>) &#123;</div><div class="line">            needsFocus.requestFocus();</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            Log.w(TAG,</div><div class="line">                    <span class="string">"Previously focused view reported id "</span> + focusedViewId</div><div class="line">                            + <span class="string">" during save, but can't be found during restore."</span>);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">// step 4. restore the panels</span></div><div class="line">    SparseArray&lt;Parcelable&gt; panelStates = savedInstanceState.getSparseParcelableArray(PANELS_TAG);</div><div class="line">    <span class="keyword">if</span> (panelStates != <span class="keyword">null</span>) &#123;</div><div class="line">        restorePanelState(panelStates);</div><div class="line">    &#125;</div><div class="line">    <span class="comment">// step 5.</span></div><div class="line">    <span class="keyword">if</span> (mDecorContentParent != <span class="keyword">null</span>) &#123;</div><div class="line">        SparseArray&lt;Parcelable&gt; actionBarStates =</div><div class="line">                savedInstanceState.getSparseParcelableArray(ACTION_BAR_TAG);</div><div class="line">        <span class="keyword">if</span> (actionBarStates != <span class="keyword">null</span>) &#123;</div><div class="line">            doPendingInvalidatePanelMenu();</div><div class="line">            mDecorContentParent.restoreToolbarHierarchyState(actionBarStates);</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            Log.w(TAG, <span class="string">"Missing saved instance states for action bar views! "</span> +</div><div class="line">                    <span class="string">"State will not be restored."</span>);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>跟保存的过程完全一致，分五步。我们只看第三步：<code>mContentParent.restoreHierarchyState(savedStates)</code>,这里调用<code>View#restoreHierarchyState(savedStates)</code>方法：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">restoreHierarchyState</span><span class="params">(SparseArray&lt;Parcelable&gt; container)</span> </span>&#123;</div><div class="line">    dispatchRestoreInstanceState(container);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>一样直接传递到<code>View#dispatchRestoreInstanceState()</code>方法：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">dispatchRestoreInstanceState</span><span class="params">(SparseArray&lt;Parcelable&gt; container)</span> </span>&#123;</div><div class="line">    <span class="keyword">if</span> (mID != NO_ID) &#123;</div><div class="line">        Parcelable state = container.get(mID);</div><div class="line">        <span class="keyword">if</span> (state != <span class="keyword">null</span>) &#123;</div><div class="line">            <span class="comment">// Log.i("View", "Restoreing #" + Integer.toHexString(mID)</span></div><div class="line">            <span class="comment">// + ": " + state);</span></div><div class="line">            mPrivateFlags &amp;= ~PFLAG_SAVE_STATE_CALLED;</div><div class="line">            onRestoreInstanceState(state);</div><div class="line">            <span class="keyword">if</span> ((mPrivateFlags &amp; PFLAG_SAVE_STATE_CALLED) == <span class="number">0</span>) &#123;</div><div class="line">                <span class="keyword">throw</span> <span class="keyword">new</span> IllegalStateException(</div><div class="line">                        <span class="string">"Derived class did not call super.onRestoreInstanceState()"</span>);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>对于View的这个方法，从SparseArray中用mID获取到state，<br>然后调用<code>View#onRestoreInstanceState()</code>方法。看一下ViewGroup对应的方法：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">dispatchRestoreInstanceState</span><span class="params">(SparseArray&lt;Parcelable&gt; container)</span> </span>&#123;</div><div class="line">    <span class="keyword">super</span>.dispatchRestoreInstanceState(container);</div><div class="line">    <span class="keyword">final</span> <span class="keyword">int</span> count = mChildrenCount;</div><div class="line">    <span class="keyword">final</span> View[] children = mChildren;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; count; i++) &#123;</div><div class="line">        View c = children[i];</div><div class="line">        <span class="keyword">if</span> ((c.mViewFlags &amp; PARENT_SAVE_DISABLED_MASK) != PARENT_SAVE_DISABLED) &#123;</div><div class="line">            c.dispatchRestoreInstanceState(container);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>先调用View版本的<code>dispatchRestoreInstanceState()</code>方法，然后遍历childView,调用对应的<code>dispatchRestoreInstanceState()</code>方法。<br>最后看一下<code>View#onRestoreInstanceState()</code>方法:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onRestoreInstanceState</span><span class="params">(Parcelable state)</span> </span>&#123;</div><div class="line">    mPrivateFlags |= PFLAG_SAVE_STATE_CALLED;</div><div class="line">    <span class="keyword">if</span> (state != <span class="keyword">null</span> &amp;&amp; !(state <span class="keyword">instanceof</span> AbsSavedState)) &#123;</div><div class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"Wrong state class, expecting View State "</span>);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">if</span> (state != <span class="keyword">null</span> &amp;&amp; state <span class="keyword">instanceof</span> BaseSavedState) &#123;</div><div class="line">        mStartActivityRequestWho = ((BaseSavedState) state).mStartActivityRequestWhoSaved;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>这个方法很简单，直接获取mStartActivityRequestWho对象，对于自定义View，需要重写这个方法，获取自己的状态。同样看一下<code>TextView#onRestoreInstanceState()</code>方法:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onRestoreInstanceState</span><span class="params">(Parcelable state)</span> </span>&#123;</div><div class="line">    <span class="keyword">if</span> (!(state <span class="keyword">instanceof</span> SavedState)) &#123;</div><div class="line">        <span class="keyword">super</span>.onRestoreInstanceState(state);</div><div class="line">        <span class="keyword">return</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    SavedState ss = (SavedState)state;</div><div class="line">    <span class="keyword">super</span>.onRestoreInstanceState(ss.getSuperState());</div><div class="line"></div><div class="line">    <span class="comment">// XXX restore buffer type too, as well as lots of other stuff</span></div><div class="line">    <span class="keyword">if</span> (ss.text != <span class="keyword">null</span>) &#123;</div><div class="line">        setText(ss.text);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">if</span> (ss.selStart &gt;= <span class="number">0</span> &amp;&amp; ss.selEnd &gt;= <span class="number">0</span>) &#123;</div><div class="line">        <span class="keyword">if</span> (mText <span class="keyword">instanceof</span> Spannable) &#123;</div><div class="line">            <span class="keyword">int</span> len = mText.length();</div><div class="line"></div><div class="line">            <span class="keyword">if</span> (ss.selStart &gt; len || ss.selEnd &gt; len) &#123;</div><div class="line">                String restored = <span class="string">""</span>;</div><div class="line"></div><div class="line">                <span class="keyword">if</span> (ss.text != <span class="keyword">null</span>) &#123;</div><div class="line">                    restored = <span class="string">"(restored) "</span>;</div><div class="line">                &#125;</div><div class="line"></div><div class="line">                Log.e(LOG_TAG, <span class="string">"Saved cursor position "</span> + ss.selStart +</div><div class="line">                      <span class="string">"/"</span> + ss.selEnd + <span class="string">" out of range for "</span> + restored +</div><div class="line">                      <span class="string">"text "</span> + mText);</div><div class="line">            &#125; <span class="keyword">else</span> &#123;</div><div class="line">                Selection.setSelection((Spannable) mText, ss.selStart, ss.selEnd);</div><div class="line"></div><div class="line">                <span class="keyword">if</span> (ss.frozenWithFocus) &#123;</div><div class="line">                    createEditorIfNeeded();</div><div class="line">                    mEditor.mFrozenWithFocus = <span class="keyword">true</span>;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">if</span> (ss.error != <span class="keyword">null</span>) &#123;</div><div class="line">        <span class="keyword">final</span> CharSequence error = ss.error;</div><div class="line">        <span class="comment">// Display the error later, after the first layout pass</span></div><div class="line">        post(<span class="keyword">new</span> Runnable() &#123;</div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</div><div class="line">                <span class="keyword">if</span> (mEditor == <span class="keyword">null</span> || !mEditor.mErrorWasChanged) &#123;</div><div class="line">                    setError(error);</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">if</span> (ss.editorState != <span class="keyword">null</span>) &#123;</div><div class="line">        createEditorIfNeeded();</div><div class="line">        mEditor.restoreInstanceState(ss.editorState);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>首先判断state是否为TextView保存的状态，如果不是，直接调用super，然后获取对应的状态设置给TextView。</p>
+<p>可以看出Restore过程和Save过程完全相同。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/08/20/android-view-draw/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Liu Jilong">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="刘怜苏">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/08/20/android-view-draw/" itemprop="url">Android中View的绘制流程</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-08-20T14:02:23+08:00">
+                2016-08-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><code>Android</code>的<code>View</code>绘制是从根节点（<code>Activity</code>对应的根节点是<code>DecorView</code>）开始，他是一个自上而下的过程。View的绘制经历三个过程：measure、layout、draw。<br>measure过程从<code>View</code>的<code>measure()</code>方法看起：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">void</span> <span class="title">measure</span><span class="params">(<span class="keyword">int</span> widthMeasureSpec, <span class="keyword">int</span> heightMeasureSpec)</span> </span>&#123;</div><div class="line">    <span class="comment">// Suppress sign extension for the low bytes</span></div><div class="line">    <span class="keyword">long</span> key = (<span class="keyword">long</span>) widthMeasureSpec &lt;&lt; <span class="number">32</span> | (<span class="keyword">long</span>) heightMeasureSpec &amp; <span class="number">0xffffffffL</span>;</div><div class="line">    <span class="comment">//生成缓存的key</span></div><div class="line">    <span class="keyword">if</span> (mMeasureCache == <span class="keyword">null</span>) mMeasureCache = <span class="keyword">new</span> LongSparseLongArray(<span class="number">2</span>); <span class="comment">// 创建缓存</span></div><div class="line"></div><div class="line">    <span class="keyword">if</span> ((mPrivateFlags &amp; PFLAG_FORCE_LAYOUT) == PFLAG_FORCE_LAYOUT ||</div><div class="line">            widthMeasureSpec != mOldWidthMeasureSpec ||</div><div class="line">            heightMeasureSpec != mOldHeightMeasureSpec) &#123;</div><div class="line"></div><div class="line">        <span class="comment">// first clears the measured dimension flag</span></div><div class="line">        mPrivateFlags &amp;= ~PFLAG_MEASURED_DIMENSION_SET;</div><div class="line"></div><div class="line">        <span class="keyword">int</span> cacheIndex = (mPrivateFlags &amp; PFLAG_FORCE_LAYOUT) == PFLAG_FORCE_LAYOUT ? -<span class="number">1</span> :</div><div class="line">                mMeasureCache.indexOfKey(key);</div><div class="line">        <span class="keyword">if</span> (cacheIndex &lt; <span class="number">0</span> || sIgnoreMeasureCache) &#123;</div><div class="line">            <span class="comment">// measure ourselves, this should set the measured dimension flag back</span></div><div class="line">            onMeasure(widthMeasureSpec, heightMeasureSpec);</div><div class="line">            mPrivateFlags3 &amp;= ~PFLAG3_MEASURE_NEEDED_BEFORE_LAYOUT;</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            <span class="keyword">long</span> value = mMeasureCache.valueAt(cacheIndex);</div><div class="line">            <span class="comment">// Casting a long to int drops the high 32 bits, no mask needed</span></div><div class="line">            setMeasuredDimensionRaw((<span class="keyword">int</span>) (value &gt;&gt; <span class="number">32</span>), (<span class="keyword">int</span>) value);</div><div class="line">            mPrivateFlags3 |= PFLAG3_MEASURE_NEEDED_BEFORE_LAYOUT;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="comment">// flag not set, setMeasuredDimension() was not invoked, we raise</span></div><div class="line">        <span class="comment">// an exception to warn the developer</span></div><div class="line">        <span class="keyword">if</span> ((mPrivateFlags &amp; PFLAG_MEASURED_DIMENSION_SET) != PFLAG_MEASURED_DIMENSION_SET) &#123;</div><div class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> IllegalStateException(<span class="string">"View with id "</span> + getId() + <span class="string">": "</span></div><div class="line">                    + getClass().getName() + <span class="string">"#onMeasure() did not set the"</span></div><div class="line">                    + <span class="string">" measured dimension by calling"</span></div><div class="line">                    + <span class="string">" setMeasuredDimension()"</span>);</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        mPrivateFlags |= PFLAG_LAYOUT_REQUIRED;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    mOldWidthMeasureSpec = widthMeasureSpec;</div><div class="line">    mOldHeightMeasureSpec = heightMeasureSpec;</div><div class="line"></div><div class="line">    mMeasureCache.put(key, ((<span class="keyword">long</span>) mMeasuredWidth) &lt;&lt; <span class="number">32</span> |</div><div class="line">            (<span class="keyword">long</span>) mMeasuredHeight &amp; <span class="number">0xffffffffL</span>); <span class="comment">// suppress sign extension</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>在代码中<code>mMeasureCache</code>是一个<code>LongSparseLongArray</code>，代表measure结果的缓存，如果缓存没有命中或者忽略缓存，就调用<code>onMeasure</code>来测量结果，这种情况下用户需要调用<code>setMeasuredDimension()</code>来设置measure的结果，相反情况下直接使用缓存的结果，并直接调用<code>setMeasuredDimensionraw()</code>设置测量结果。最后将得到的结果保存在缓存中。</p>
+<p>然后看<code>View</code>的<code>onMeasure()</code>方法：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onMeasure</span><span class="params">(<span class="keyword">int</span> widthMeasureSpec, <span class="keyword">int</span> heightMeasureSpec)</span> </span>&#123;</div><div class="line">    setMeasuredDimension(getDefaultSize(getSuggestedMinimumWidth(), widthMeasureSpec),</div><div class="line">            getDefaultSize(getSuggestedMinimumHeight(), heightMeasureSpec));</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>使用<code>getDefaultSize()</code>方法计算出默认的值，具体的计算方法读者可以自行研究一下，在自定义<code>View</code>时可以参考。</p>
+<p><code>View</code>的<code>measure()</code>方法的功能是确定自己的大小，而<code>ViewGroup</code>的<code>measure()</code>方法则需要确定自己和所有的子<code>View</code>的大小。在<code>ViewGroup</code>中并没有找到<code>measure()</code>和<code>onMeasure()</code>方法，因为<code>measure()</code>方法对于所有的<code>View</code>都是通用的，只需要重写<code>onMeasure()</code>方法，同时不同的<code>ViewGroup</code>计算大小的方法并不相同，所以需要具体的<code>ViewGroup</code>来重写<code>onMeasure()</code>方法。<br><code>ViewGroup</code>提供了三个measure相关的方法：<code>measureChild</code>,<code>measureChildren</code>,<code>measureChildWithMargins</code>供继承者调用。<br>我们选择最简单的一个<code>ViewGroup</code>,<code>FrameLayout</code>来看一下<code>onMeasure()</code>的实现。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onMeasure</span><span class="params">(<span class="keyword">int</span> widthMeasureSpec, <span class="keyword">int</span> heightMeasureSpec)</span> </span>&#123;</div><div class="line">    <span class="keyword">int</span> count = getChildCount();</div><div class="line">    <span class="keyword">int</span> maxHeight = <span class="number">0</span>;</div><div class="line">    <span class="keyword">int</span> maxWidth = <span class="number">0</span>;</div><div class="line"></div><div class="line">    <span class="keyword">int</span> childState = <span class="number">0</span>;</div><div class="line"></div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; count; i++) &#123;</div><div class="line">        <span class="keyword">final</span> View child = getChildAt(i);</div><div class="line">        <span class="keyword">if</span> (mMeasureAllChildren || child.getVisibility() != GONE) &#123;</div><div class="line">            measureChildWithMargins(child, widthMeasureSpec, <span class="number">0</span>, heightMeasureSpec, <span class="number">0</span>);</div><div class="line">            <span class="keyword">final</span> LayoutParams lp = (LayoutParams) child.getLayoutParams();</div><div class="line">            maxWidth = Math.max(maxWidth,</div><div class="line">                    child.getMeasuredWidth() + lp.leftMargin + lp.rightMargin);</div><div class="line">            maxHeight = Math.max(maxHeight,</div><div class="line">                    child.getMeasuredHeight() + lp.topMargin + lp.bottomMargin);</div><div class="line">            childState = combineMeasuredStates(childState, child.getMeasuredState());</div><div class="line"></div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">// Account for padding too</span></div><div class="line">    maxWidth += getPaddingLeftWithForeground() + getPaddingRightWithForeground();</div><div class="line">    maxHeight += getPaddingTopWithForeground() + getPaddingBottomWithForeground();</div><div class="line"></div><div class="line">    <span class="comment">// Check against our minimum height and width</span></div><div class="line">    maxHeight = Math.max(maxHeight, getSuggestedMinimumHeight());</div><div class="line">    maxWidth = Math.max(maxWidth, getSuggestedMinimumWidth());</div><div class="line"></div><div class="line">    <span class="comment">// some more code</span></div><div class="line">    setMeasuredDimension(resolveSizeAndState(maxWidth, widthMeasureSpec, childState),</div><div class="line">            resolveSizeAndState(maxHeight, heightMeasureSpec,</div><div class="line">                    childState &lt;&lt; MEASURED_HEIGHT_STATE_SHIFT));</div><div class="line">    <span class="comment">// some more code</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>遍历所有的child，调用child的<code>measure()</code>方法获取child的宽和高。分别选取最大的宽和高，与自己的最小值比较，得到最后自己的大小，调用<code>setMeasuredDimension()</code>设置自己的大小。<br>PS：childView的measure方法可能会调用多次。</p>
+<p>通过这一系列的<code>measure()</code>方法的调用，整个View层级的大小已经设置好了，接下来进入layout过程:<br>View的layout()方法：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">layout</span><span class="params">(<span class="keyword">int</span> l, <span class="keyword">int</span> t, <span class="keyword">int</span> r, <span class="keyword">int</span> b)</span> </span>&#123;</div><div class="line">    <span class="keyword">if</span> ((mPrivateFlags3 &amp; PFLAG3_MEASURE_NEEDED_BEFORE_LAYOUT) != <span class="number">0</span>) &#123;</div><div class="line">        onMeasure(mOldWidthMeasureSpec, mOldHeightMeasureSpec);</div><div class="line">        mPrivateFlags3 &amp;= ~PFLAG3_MEASURE_NEEDED_BEFORE_LAYOUT;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">int</span> oldL = mLeft;</div><div class="line">    <span class="keyword">int</span> oldT = mTop;</div><div class="line">    <span class="keyword">int</span> oldB = mBottom;</div><div class="line">    <span class="keyword">int</span> oldR = mRight;</div><div class="line"></div><div class="line">    <span class="keyword">boolean</span> changed = isLayoutModeOptical(mParent) ?</div><div class="line">            setOpticalFrame(l, t, r, b) : setFrame(l, t, r, b);</div><div class="line"></div><div class="line">    <span class="keyword">if</span> (changed || (mPrivateFlags &amp; PFLAG_LAYOUT_REQUIRED) == PFLAG_LAYOUT_REQUIRED) &#123;</div><div class="line">        onLayout(changed, l, t, r, b);</div><div class="line">        mPrivateFlags &amp;= ~PFLAG_LAYOUT_REQUIRED;</div><div class="line"></div><div class="line">        ListenerInfo li = mListenerInfo;</div><div class="line">        <span class="keyword">if</span> (li != <span class="keyword">null</span> &amp;&amp; li.mOnLayoutChangeListeners != <span class="keyword">null</span>) &#123;</div><div class="line">            ArrayList&lt;OnLayoutChangeListener&gt; listenersCopy =</div><div class="line">                    (ArrayList&lt;OnLayoutChangeListener&gt;)li.mOnLayoutChangeListeners.clone();</div><div class="line">            <span class="keyword">int</span> numListeners = listenersCopy.size();</div><div class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; numListeners; ++i) &#123;</div><div class="line">                listenersCopy.get(i).onLayoutChange(<span class="keyword">this</span>, l, t, r, b, oldL, oldT, oldR, oldB);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    mPrivateFlags &amp;= ~PFLAG_FORCE_LAYOUT;</div><div class="line">    mPrivateFlags3 |= PFLAG3_IS_LAID_OUT;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>mLeft,mTop,mBottom,mRight表示当前View在parentView中的位置信息。<br>首先判断在layout前是否需要调用onMeasure()并进行调用，然后将位置信息暂存下来。根据布局边界模式调用setFrame()或setOpticalFrame()方法。<a href="https://developer.android.com/about/versions/android-4.3.html" target="_blank" rel="external">Optical Bounds</a>（视觉边界）是Android在4.3版本针对.9图引入的API。其中setOpticalFrame()对边界的尺寸做一些计算之后直接调用setFrame()方法。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">boolean</span> <span class="title">setFrame</span><span class="params">(<span class="keyword">int</span> left, <span class="keyword">int</span> top, <span class="keyword">int</span> right, <span class="keyword">int</span> bottom)</span> </span>&#123;</div><div class="line">    <span class="keyword">boolean</span> changed = <span class="keyword">false</span>;</div><div class="line"></div><div class="line">    <span class="keyword">if</span> (mLeft != left || mRight != right || mTop != top || mBottom != bottom) &#123;</div><div class="line">        changed = <span class="keyword">true</span>;</div><div class="line"></div><div class="line">        <span class="comment">// Remember our drawn bit</span></div><div class="line">        <span class="keyword">int</span> drawn = mPrivateFlags &amp; PFLAG_DRAWN;</div><div class="line"></div><div class="line">        <span class="keyword">int</span> oldWidth = mRight - mLeft;</div><div class="line">        <span class="keyword">int</span> oldHeight = mBottom - mTop;</div><div class="line">        <span class="keyword">int</span> newWidth = right - left;</div><div class="line">        <span class="keyword">int</span> newHeight = bottom - top;</div><div class="line">        <span class="keyword">boolean</span> sizeChanged = (newWidth != oldWidth) || (newHeight != oldHeight);</div><div class="line"></div><div class="line">        <span class="comment">// Invalidate our old position</span></div><div class="line">        invalidate(sizeChanged);</div><div class="line"></div><div class="line">        mLeft = left;</div><div class="line">        mTop = top;</div><div class="line">        mRight = right;</div><div class="line">        mBottom = bottom;</div><div class="line">        mRenderNode.setLeftTopRightBottom(mLeft, mTop, mRight, mBottom);</div><div class="line"></div><div class="line">        mPrivateFlags |= PFLAG_HAS_BOUNDS;</div><div class="line"></div><div class="line"></div><div class="line">        <span class="keyword">if</span> (sizeChanged) &#123;</div><div class="line">            sizeChange(newWidth, newHeight, oldWidth, oldHeight);</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="keyword">if</span> ((mViewFlags &amp; VISIBILITY_MASK) == VISIBLE || mGhostView != <span class="keyword">null</span>) &#123;</div><div class="line">            mPrivateFlags |= PFLAG_DRAWN;</div><div class="line">            invalidate(sizeChanged);</div><div class="line">            <span class="comment">// parent display list may need to be recreated based on a change in the bounds</span></div><div class="line">            <span class="comment">// of any child</span></div><div class="line">            invalidateParentCaches();</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="comment">// Reset drawn bit to original value (invalidate turns it off)</span></div><div class="line">        mPrivateFlags |= drawn;</div><div class="line"></div><div class="line">        mBackgroundSizeChanged = <span class="keyword">true</span>;</div><div class="line">        <span class="keyword">if</span> (mForegroundInfo != <span class="keyword">null</span>) &#123;</div><div class="line">            mForegroundInfo.mBoundsChanged = <span class="keyword">true</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> changed;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>在<code>setFrame()</code>方法中，根据View的位置和尺寸的变化，选择性调用<code>invalidate()</code>和<code>sizeChanged()</code>方法。<code>sizeChanged()</code>方法调用<code>onSizeChanged()</code>方法。在自定义View时，重写<code>onSizedChanged()</code>方法能很方便地检查View尺寸的变化。如果View保存的mLeft,mTop,mRight,mBottom与setFrame()传入的left,top,right,bottom中有一个不一样，setFrame()就会返回true。回到layout()方法中，如果setFrame()返回true或者设置了需要Layout的FLAG,就会调用onLayout()方法，并且获取调用所有的OnLayoutChangeListener。<br>View的onLayout()方法：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onLayout</span><span class="params">(<span class="keyword">boolean</span> changed, <span class="keyword">int</span> left, <span class="keyword">int</span> top, <span class="keyword">int</span> right, <span class="keyword">int</span> bottom)</span> </span>&#123;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>这是一个空方法，因为在layout()方法中设置好了View自身的位置，onLayout()方法需要设置child View的位置，所以View的onLayout()方法是空方法，具体的实现在对应的ViewGroup中。<br>在ViewGroup中，onLayout()是一个abstract方法，表示继承类必须重写这个方法。同样地，看一下FrameLayout的onLayout()方法：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onLayout</span><span class="params">(<span class="keyword">boolean</span> changed, <span class="keyword">int</span> left, <span class="keyword">int</span> top, <span class="keyword">int</span> right, <span class="keyword">int</span> bottom)</span> </span>&#123;</div><div class="line">    layoutChildren(left, top, right, bottom, <span class="keyword">false</span> <span class="comment">/* no force left gravity */</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">layoutChildren</span><span class="params">(<span class="keyword">int</span> left, <span class="keyword">int</span> top, <span class="keyword">int</span> right, <span class="keyword">int</span> bottom,</span></span></div><div class="line">                              <span class="keyword">boolean</span> forceLeftGravity) &#123;</div><div class="line">    <span class="keyword">final</span> <span class="keyword">int</span> count = getChildCount();</div><div class="line"></div><div class="line">    <span class="keyword">final</span> <span class="keyword">int</span> parentLeft = getPaddingLeftWithForeground();</div><div class="line">    <span class="keyword">final</span> <span class="keyword">int</span> parentRight = right - left - getPaddingRightWithForeground();</div><div class="line"></div><div class="line">    <span class="keyword">final</span> <span class="keyword">int</span> parentTop = getPaddingTopWithForeground();</div><div class="line">    <span class="keyword">final</span> <span class="keyword">int</span> parentBottom = bottom - top - getPaddingBottomWithForeground();</div><div class="line"></div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; count; i++) &#123;</div><div class="line">        <span class="keyword">final</span> View child = getChildAt(i);</div><div class="line">        <span class="keyword">if</span> (child.getVisibility() != GONE) &#123;</div><div class="line">            <span class="keyword">final</span> LayoutParams lp = (LayoutParams) child.getLayoutParams();</div><div class="line"></div><div class="line">            <span class="keyword">final</span> <span class="keyword">int</span> width = child.getMeasuredWidth();</div><div class="line">            <span class="keyword">final</span> <span class="keyword">int</span> height = child.getMeasuredHeight();</div><div class="line"></div><div class="line">            <span class="keyword">int</span> childLeft;</div><div class="line">            <span class="keyword">int</span> childTop;</div><div class="line"></div><div class="line">            <span class="keyword">int</span> gravity = lp.gravity;</div><div class="line">            <span class="keyword">if</span> (gravity == -<span class="number">1</span>) &#123;</div><div class="line">                gravity = DEFAULT_CHILD_GRAVITY;</div><div class="line">            &#125;</div><div class="line"></div><div class="line">            <span class="keyword">final</span> <span class="keyword">int</span> layoutDirection = getLayoutDirection();</div><div class="line">            <span class="keyword">final</span> <span class="keyword">int</span> absoluteGravity = Gravity.getAbsoluteGravity(gravity, layoutDirection);</div><div class="line">            <span class="keyword">final</span> <span class="keyword">int</span> verticalGravity = gravity &amp; Gravity.VERTICAL_GRAVITY_MASK;</div><div class="line"></div><div class="line">            <span class="keyword">switch</span> (absoluteGravity &amp; Gravity.HORIZONTAL_GRAVITY_MASK) &#123;</div><div class="line">                <span class="keyword">case</span> Gravity.CENTER_HORIZONTAL:</div><div class="line">                    childLeft = parentLeft + (parentRight - parentLeft - width) / <span class="number">2</span> +</div><div class="line">                    lp.leftMargin - lp.rightMargin;</div><div class="line">                    <span class="keyword">break</span>;</div><div class="line">                <span class="keyword">case</span> Gravity.RIGHT:</div><div class="line">                    <span class="keyword">if</span> (!forceLeftGravity) &#123;</div><div class="line">                        childLeft = parentRight - width - lp.rightMargin;</div><div class="line">                        <span class="keyword">break</span>;</div><div class="line">                    &#125;</div><div class="line">                <span class="keyword">case</span> Gravity.LEFT:</div><div class="line">                <span class="keyword">default</span>:</div><div class="line">                    childLeft = parentLeft + lp.leftMargin;</div><div class="line">            &#125;</div><div class="line"></div><div class="line">            <span class="keyword">switch</span> (verticalGravity) &#123;</div><div class="line">                <span class="keyword">case</span> Gravity.TOP:</div><div class="line">                    childTop = parentTop + lp.topMargin;</div><div class="line">                    <span class="keyword">break</span>;</div><div class="line">                <span class="keyword">case</span> Gravity.CENTER_VERTICAL:</div><div class="line">                    childTop = parentTop + (parentBottom - parentTop - height) / <span class="number">2</span> +</div><div class="line">                    lp.topMargin - lp.bottomMargin;</div><div class="line">                    <span class="keyword">break</span>;</div><div class="line">                <span class="keyword">case</span> Gravity.BOTTOM:</div><div class="line">                    childTop = parentBottom - height - lp.bottomMargin;</div><div class="line">                    <span class="keyword">break</span>;</div><div class="line">                <span class="keyword">default</span>:</div><div class="line">                    childTop = parentTop + lp.topMargin;</div><div class="line">            &#125;</div><div class="line"></div><div class="line">            child.layout(childLeft, childTop, childLeft + width, childTop + height);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>遍历child View，根据childView在水平和竖直方向的Gravity，计算对应的位置，然后调用child View的layout()方法，设置child View的位置。</p>
+<p>最后进入到draw流程：<br>draw流程的调用来源：<br><code>ViewRootImpl.performTraversals()</code>-&gt;<code>ViewRootImpl.performDraw()</code>-&gt;<code>ViewRootImpl.draw(boolean fullRedrawNeeded)</code>-&gt;<code>ViewRootImpl.drawSoftware()</code><br>在ViewRootImpl中有一个Surface对象mSurface，代表一块屏幕缓存区。<br>在drawSoftware()方法中，调用mSurface.lockCanvas()获取了一个Canvas对象，用来绘制。后面所有的绘制操作都在这个Canvas上。然后调用DecorView的draw()方法开始绘制。在绘制流程完成之后调用mSurface.unlockCanvasAndPost()将绘制的结果交给SurfaceFling服务进行渲染。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">draw</span><span class="params">(Canvas canvas)</span> </span>&#123;</div><div class="line">    <span class="keyword">final</span> <span class="keyword">int</span> privateFlags = mPrivateFlags;</div><div class="line">    <span class="keyword">final</span> <span class="keyword">boolean</span> dirtyOpaque = (privateFlags &amp; PFLAG_DIRTY_MASK) == PFLAG_DIRTY_OPAQUE &amp;&amp;</div><div class="line">            (mAttachInfo == <span class="keyword">null</span> || !mAttachInfo.mIgnoreDirtyState);</div><div class="line">    mPrivateFlags = (privateFlags &amp; ~PFLAG_DIRTY_MASK) | PFLAG_DRAWN;</div><div class="line"></div><div class="line">    <span class="comment">/*</span></div><div class="line">     * Draw traversal performs several drawing steps which must be executed</div><div class="line">     * in the appropriate order:</div><div class="line">     *</div><div class="line">     *      1. Draw the background</div><div class="line">     *      2. If necessary, save the canvas' layers to prepare for fading</div><div class="line">     *      3. Draw view's content</div><div class="line">     *      4. Draw children</div><div class="line">     *      5. If necessary, draw the fading edges and restore layers</div><div class="line">     *      6. Draw decorations (scrollbars for instance)</div><div class="line">     */</div><div class="line"></div><div class="line">    <span class="comment">// Step 1, draw the background, if needed</span></div><div class="line">    <span class="keyword">int</span> saveCount;</div><div class="line"></div><div class="line">    <span class="keyword">if</span> (!dirtyOpaque) &#123;</div><div class="line">        drawBackground(canvas);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">// skip step 2 &amp; 5 if possible (common case)</span></div><div class="line">    <span class="keyword">final</span> <span class="keyword">int</span> viewFlags = mViewFlags;</div><div class="line">    <span class="keyword">boolean</span> horizontalEdges = (viewFlags &amp; FADING_EDGE_HORIZONTAL) != <span class="number">0</span>;</div><div class="line">    <span class="keyword">boolean</span> verticalEdges = (viewFlags &amp; FADING_EDGE_VERTICAL) != <span class="number">0</span>;</div><div class="line">    <span class="keyword">if</span> (!verticalEdges &amp;&amp; !horizontalEdges) &#123;</div><div class="line">        <span class="comment">// Step 3, draw the content</span></div><div class="line">        <span class="keyword">if</span> (!dirtyOpaque) onDraw(canvas);</div><div class="line"></div><div class="line">        <span class="comment">// Step 4, draw the children</span></div><div class="line">        dispatchDraw(canvas);</div><div class="line"></div><div class="line">        <span class="comment">// Overlay is part of the content and draws beneath Foreground</span></div><div class="line">        <span class="keyword">if</span> (mOverlay != <span class="keyword">null</span> &amp;&amp; !mOverlay.isEmpty()) &#123;</div><div class="line">            mOverlay.getOverlayView().dispatchDraw(canvas);</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="comment">// Step 6, draw decorations (foreground, scrollbars)</span></div><div class="line">        onDrawForeground(canvas);</div><div class="line"></div><div class="line">        <span class="comment">// we're done...</span></div><div class="line">        <span class="keyword">return</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/*</span></div><div class="line">     * Here we do the full fledged routine...</div><div class="line">     * (this is an uncommon case where speed matters less,</div><div class="line">     * this is why we repeat some of the tests that have been</div><div class="line">     * done above)</div><div class="line">     */</div><div class="line"></div><div class="line">    <span class="comment">// hide the full fledged routine...</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/07/18/android-classloader/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Liu Jilong">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="刘怜苏">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/07/18/android-classloader/" itemprop="url">Android中的ClassLoader（PathClassLoader和DexClassLoder）</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-07-18T09:44:00+08:00">
+                2016-07-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>最近在研究插件动态加载，记录一下其中<code>ClassLoader</code>部分的内容.</p>
+<p>Android中的<code>ClassLoader</code>与Java有些不同，Android中<code>ClassLoader</code>加载的是dex文件，而Java中加载的是jar文件.相同的是两者都采用了双亲委派模型.<code>ClassLoader</code>中<code>loadClass</code>函数体现了这个模型：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">protected</span> Class&lt;?&gt; loadClass(String className, <span class="keyword">boolean</span> resolve)</div><div class="line">    <span class="keyword">throws</span> ClassNotFoundException &#123;</div><div class="line">    Class&lt;?&gt; clazz = findLoadedClass(className);<span class="comment">// 首先检查Class是否已经加载过</span></div><div class="line">    <span class="keyword">if</span> (clazz == <span class="keyword">null</span>) &#123;</div><div class="line">        ClassNotFoundException suppressed = <span class="keyword">null</span>;</div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">            clazz = parent.loadClass(className, <span class="keyword">false</span>);<span class="comment">//尝试使用parent ClassLoader去加载Class</span></div><div class="line">        &#125; <span class="keyword">catch</span> (ClassNotFoundException e) &#123;</div><div class="line">            suppressed = e;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="keyword">if</span> (clazz == <span class="keyword">null</span>) &#123;</div><div class="line">            <span class="keyword">try</span> &#123;</div><div class="line">                clazz = findClass(className);<span class="comment">// 如果加载不成功，调用findClass函数来获取class对象.</span></div><div class="line">            &#125; <span class="keyword">catch</span> (ClassNotFoundException e) &#123;</div><div class="line">                e.addSuppressed(suppressed);</div><div class="line">                <span class="keyword">throw</span> e;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> clazz;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>其中<code>findClass()</code>为protected，直接抛出异常，需要子类来实现具体的find过程.Android中<code>ClassLoader</code>的子类是<code>BaseDexClassLoder</code>,同时有<code>PathClassLoader</code>和<code>DexClassLoder</code>两个类直接继承自<code>BaseDexClassLoder</code>.<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DexClassLoader</span> <span class="keyword">extends</span> <span class="title">BaseDexClassLoader</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">DexClassLoader</span><span class="params">(String dexPath, String optimizedDirectory,</span></span></div><div class="line">            String libraryPath, ClassLoader parent) &#123;</div><div class="line">        <span class="keyword">super</span>(dexPath, <span class="keyword">new</span> File(optimizedDirectory), libraryPath, parent);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PathClassLoader</span> <span class="keyword">extends</span> <span class="title">BaseDexClassLoader</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">PathClassLoader</span><span class="params">(String dexPath, ClassLoader parent)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>(dexPath, <span class="keyword">null</span>, <span class="keyword">null</span>, parent);</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">PathClassLoader</span><span class="params">(String dexPath, String libraryPath,</span></span></div><div class="line">            ClassLoader parent) &#123;</div><div class="line">        <span class="keyword">super</span>(dexPath, <span class="keyword">null</span>, libraryPath, parent);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BaseDexClassLoader</span> <span class="keyword">extends</span> <span class="title">ClassLoader</span>｛</span></div><div class="line">    /**</div><div class="line">     * <span class="title">Constructs</span> <span class="title">an</span> <span class="title">instance</span>.</div><div class="line">     *</div><div class="line">     * @<span class="title">param</span> <span class="title">dexPath</span> <span class="title">the</span> <span class="title">list</span> <span class="title">of</span> <span class="title">jar</span>/<span class="title">apk</span> <span class="title">files</span> <span class="title">containing</span> <span class="title">classes</span> <span class="title">and</span></div><div class="line">     * <span class="title">resources</span>, <span class="title">delimited</span> <span class="title">by</span> &#123;<span class="meta">@code</span> File.pathSeparator&#125;, which</div><div class="line">     * defaults to &#123;<span class="meta">@code</span> <span class="string">":"</span>&#125; on Android</div><div class="line">     * <span class="meta">@param</span> optimizedDirectory directory where optimized dex files</div><div class="line">     * should be written; may be &#123;<span class="meta">@code</span> <span class="keyword">null</span>&#125;</div><div class="line">     * <span class="meta">@param</span> libraryPath the list of directories containing <span class="keyword">native</span></div><div class="line">     * libraries, delimited by &#123;<span class="meta">@code</span> File.pathSeparator&#125;; may be</div><div class="line">     * &#123;<span class="meta">@code</span> <span class="keyword">null</span>&#125;</div><div class="line">     * <span class="meta">@param</span> parent the parent <span class="class"><span class="keyword">class</span> <span class="title">loader</span></span></div><div class="line">     */</div><div class="line">    <span class="title">public</span> <span class="title">BaseDexClassLoader</span>(<span class="title">String</span> <span class="title">dexPath</span>, <span class="title">File</span> <span class="title">optimizedDirectory</span>,</div><div class="line">            <span class="title">String</span> <span class="title">libraryPath</span>, <span class="title">ClassLoader</span> <span class="title">parent</span>) &#123;</div><div class="line">        <span class="keyword">super</span>(parent);</div><div class="line">        <span class="keyword">this</span>.originalPath = dexPath;</div><div class="line">        <span class="keyword">this</span>.pathList =</div><div class="line">            <span class="keyword">new</span> DexPathList(<span class="keyword">this</span>, dexPath, libraryPath, optimizedDirectory);</div><div class="line">    &#125;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="keyword">protected</span> Class&lt;?&gt; findClass(String name) <span class="keyword">throws</span> ClassNotFoundException &#123;</div><div class="line">        Class clazz = pathList.findClass(name);</div><div class="line">        <span class="keyword">if</span> (clazz == <span class="keyword">null</span>) &#123;</div><div class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> ClassNotFoundException(name);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> clazz;</div><div class="line">    &#125;</div><div class="line">    <span class="comment">//more code</span></div><div class="line">｝</div></pre></td></tr></table></figure></p>
+<p><code>DexClassLoader</code>和<code>PathClassLoader</code>都直接调用<code>BaseDexClassLoader</code>的构造函数，区别是传入的参数不一样，<code>PathClassLoader</code>的super调用中，传入的<code>optimizedDirectory</code>一直为null.<code>BaseDexClassLoder</code>的构造函数使用入参的三个路径构造了一个<code>DexPathList</code>对象.同时<code>findClass()</code>直接使用<code>DexPathList</code>的<code>findClass()</code>函数.看一下<code>DexPathList</code>的源码：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*package*/</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">DexPathList</span> </span>&#123;</div><div class="line">    <span class="comment">/** list of dex/resource (class path) elements */</span></div><div class="line">    <span class="keyword">private</span> <span class="keyword">final</span> Element[] dexElements;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">DexPathList</span><span class="params">(ClassLoader definingContext, String dexPath,</span></span></div><div class="line">            String libraryPath, File optimizedDirectory) &#123;</div><div class="line">        <span class="comment">// some error checking</span></div><div class="line">        <span class="keyword">this</span>.definingContext = definingContext;</div><div class="line">        <span class="keyword">this</span>.dexElements =</div><div class="line">            makeDexElements(splitDexPath(dexPath), optimizedDirectory);</div><div class="line">        <span class="keyword">this</span>.nativeLibraryDirectories = splitLibraryPath(libraryPath);</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> Class <span class="title">findClass</span><span class="params">(String name)</span> </span>&#123;</div><div class="line">        <span class="keyword">for</span> (Element element : dexElements) &#123;</div><div class="line">            DexFile dex = element.dexFile;</div><div class="line">            <span class="keyword">if</span> (dex != <span class="keyword">null</span>) &#123;</div><div class="line">                Class clazz = dex.loadClassBinaryName(name, definingContext);</div><div class="line">                <span class="keyword">if</span> (clazz != <span class="keyword">null</span>) &#123;</div><div class="line">                    <span class="keyword">return</span> clazz;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="comment">/*package*/</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">Element</span> </span>&#123;</div><div class="line">        <span class="keyword">public</span> <span class="keyword">final</span> File file;</div><div class="line">        <span class="keyword">public</span> <span class="keyword">final</span> ZipFile zipFile;</div><div class="line">        <span class="keyword">public</span> <span class="keyword">final</span> DexFile dexFile;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><code>DexPathList</code>的构造函数将传入的路径转化为<code>Element</code>数组，<code>findClass()</code>中遍历<code>Element</code>中的<code>DexFile</code>来加载<code>Class</code>，看一下<code>Element</code>数组的生成过程：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * Makes an array of dex/resource path elements, one per element of</div><div class="line"> * the given array.</div><div class="line"> */</div><div class="line"><span class="keyword">private</span> <span class="keyword">static</span> Element[] makeDexElements(ArrayList&lt;File&gt; files,</div><div class="line">        File optimizedDirectory) &#123;</div><div class="line">    ArrayList&lt;Element&gt; elements = <span class="keyword">new</span> ArrayList&lt;Element&gt;();</div><div class="line">    <span class="keyword">for</span> (File file : files) &#123;</div><div class="line">        ZipFile zip = <span class="keyword">null</span>;</div><div class="line">        DexFile dex = <span class="keyword">null</span>;</div><div class="line">        String name = file.getName();</div><div class="line">        <span class="keyword">if</span> (name.endsWith(DEX_SUFFIX)) &#123; <span class="comment">// 文件后缀为.dex</span></div><div class="line">            <span class="keyword">try</span> &#123;</div><div class="line">                dex = loadDexFile(file, optimizedDirectory);<span class="comment">//1.加载dex文件</span></div><div class="line">            &#125; <span class="keyword">catch</span> (IOException ex) &#123;</div><div class="line">                System.logE(<span class="string">"Unable to load dex file: "</span> + file, ex);</div><div class="line">            &#125;</div><div class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (name.endsWith(APK_SUFFIX) || name.endsWith(JAR_SUFFIX)</div><div class="line">                || name.endsWith(ZIP_SUFFIX)) &#123;<span class="comment">// 文件为压缩包</span></div><div class="line">            <span class="keyword">try</span> &#123;</div><div class="line">                zip = <span class="keyword">new</span> ZipFile(file);<span class="comment">//构造zip对象</span></div><div class="line">            &#125; <span class="keyword">catch</span> (IOException ex) &#123;</div><div class="line">                System.logE(<span class="string">"Unable to open zip file: "</span> + file, ex);</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">try</span> &#123;</div><div class="line">                dex = loadDexFile(file, optimizedDirectory);<span class="comment">//2.加载dex文件</span></div><div class="line">            &#125; <span class="keyword">catch</span> (IOException ignored) &#123;</div><div class="line">                 <span class="comment">// 如果压缩文件中没有dex文件，抛出这个异常，可以直接无视</span></div><div class="line">            &#125;</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            System.logW(<span class="string">"Unknown file type for: "</span> + file);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span> ((zip != <span class="keyword">null</span>) || (dex != <span class="keyword">null</span>)) &#123;<span class="comment">//如果同时有zip和dex文件，就构造对应的Element</span></div><div class="line">            elements.add(<span class="keyword">new</span> Element(file, zip, dex));</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> elements.toArray(<span class="keyword">new</span> Element[elements.size()]);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>调用了两次<code>loadDexFile()</code>来生成dex对象，第一次的file为dex文件，第二次的file是压缩文件(zip,jar,apk).看一下对应的代码：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> DexFile <span class="title">loadDexFile</span><span class="params">(File file, File optimizedDirectory)</span></span></div><div class="line">        <span class="keyword">throws</span> IOException &#123;</div><div class="line">    <span class="keyword">if</span> (optimizedDirectory == <span class="keyword">null</span>) &#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">new</span> DexFile(file);</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        String optimizedPath = optimizedPathFor(file, optimizedDirectory);</div><div class="line">        <span class="keyword">return</span> DexFile.loadDex(file.getPath(), optimizedPath, <span class="number">0</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>根据<code>optimizedDirectory</code>是否为<code>null</code>调用不同的方法来构造DexFile.这两种构造方法最后都会调用<code>openDexFile()</code>这个native函数.其中<code>outputName</code>就是<code>optimizedDirectory</code>.回到前面看，<code>PathClassLoader</code>和<code>DexClassLoader</code>的区别是<code>optimizedDirectory</code>是否为<code>null</code>,对应<code>openDexFile()</code>中<code>outputName</code>是否为<code>null</code>.<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// java code</span></div><div class="line"><span class="function"><span class="keyword">native</span> <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">openDexFile</span><span class="params">(String sourceName, String outputName,</span></span></div><div class="line">    <span class="keyword">int</span> flags) <span class="keyword">throws</span> IOException;</div></pre></td></tr></table></figure></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// native code</span></div><div class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Dalvik_dalvik_system_DexFile_openDexFile</span><span class="params">(<span class="keyword">const</span> u4* args,</span></span></div><div class="line">    JValue* pResult)</div><div class="line">&#123;</div><div class="line">    <span class="comment">// ....</span></div><div class="line">    <span class="keyword">if</span> (hasDexExtension(sourceName)</div><div class="line">            &amp;&amp; dvmRawDexFileOpen(sourceName, outputName, &amp;pRawDexFile, <span class="literal">false</span>) == <span class="number">0</span>) &#123;</div><div class="line">        ALOGV(<span class="string">"Opening DEX file '%s' (DEX)"</span>, sourceName);</div><div class="line">        pDexOrJar = (DexOrJar*) <span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(DexOrJar));</div><div class="line">        pDexOrJar-&gt;isDex = <span class="literal">true</span>;</div><div class="line">        pDexOrJar-&gt;pRawDexFile = pRawDexFile;</div><div class="line">        pDexOrJar-&gt;pDexMemory = <span class="literal">NULL</span>;</div><div class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (dvmJarFileOpen(sourceName, outputName, &amp;pJarFile, <span class="literal">false</span>) == <span class="number">0</span>) &#123;</div><div class="line">        ALOGV(<span class="string">"Opening DEX file '%s' (Jar)"</span>, sourceName);</div><div class="line">        pDexOrJar = (DexOrJar*) <span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(DexOrJar));</div><div class="line">        pDexOrJar-&gt;isDex = <span class="literal">false</span>;</div><div class="line">        pDexOrJar-&gt;pJarFile = pJarFile;</div><div class="line">        pDexOrJar-&gt;pDexMemory = <span class="literal">NULL</span>;</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        ALOGV(<span class="string">"Unable to open DEX file '%s'"</span>, sourceName);</div><div class="line">        dvmThrowIOException(<span class="string">"unable to open DEX file"</span>);</div><div class="line">    &#125;</div><div class="line">    <span class="comment">//....</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>加载dex文件的过程在<code>dvmRawDexFileOpen()</code>和<code>dvmJarFileOpen()</code>方法中完成.看一下<code>dvmJarFileOpen()</code>的代码：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">dvmJarFileOpen</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span>* fileName, <span class="keyword">const</span> <span class="keyword">char</span>* odexOutputName,</span></span></div><div class="line">    JarFile** ppJarFile, <span class="keyword">bool</span> isBootstrap)</div><div class="line">&#123;</div><div class="line">tryArchive:</div><div class="line">        entry = dexZipFindEntry(&amp;archive, kDexInJarName);</div><div class="line">        <span class="keyword">if</span> (entry != <span class="literal">NULL</span>) &#123;</div><div class="line">            <span class="keyword">if</span> (odexOutputName == <span class="literal">NULL</span>) &#123;</div><div class="line">                cachedName = dexOptGenerateCacheFileName(fileName,</div><div class="line">                                kDexInJarName);</div><div class="line">                <span class="keyword">if</span> (cachedName == <span class="literal">NULL</span>)</div><div class="line">                    <span class="keyword">goto</span> bail;</div><div class="line">            &#125; <span class="keyword">else</span> &#123;</div><div class="line">                cachedName = strdup(odexOutputName);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">bail:</div><div class="line">        <span class="comment">/* clean up, closing the open file */</span></div><div class="line">        <span class="keyword">if</span> (archiveOpen &amp;&amp; result != <span class="number">0</span>)</div><div class="line">            dexZipCloseArchive(&amp;archive);</div><div class="line">        <span class="built_in">free</span>(cachedName);</div><div class="line">        <span class="keyword">if</span> (fd &gt;= <span class="number">0</span>) &#123;</div><div class="line">            <span class="keyword">if</span> (locked)</div><div class="line">                (<span class="keyword">void</span>) dvmUnlockCachedDexFile(fd);</div><div class="line">            close(fd);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> result;</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
+<p>在<code>odexOutputName</code>为<code>null</code>的情况下，会直接返回一个ERROR，表示加载失败。</p>
+<p>所以<code>PathClassLoader</code>只能加载dex格式的文件，而<code>DexClassLoader</code>可以加载dex文件，对于apk等压缩文件，加载过程会将压缩文件中的class.dex解压到<code>optimizedDirectory</code>目录中进行加载。</p>
 
           
         
@@ -547,7 +1084,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -560,7 +1097,7 @@
             
             <div class="site-state-item site-state-tags">
               
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">标签</span>
               
             </div>
