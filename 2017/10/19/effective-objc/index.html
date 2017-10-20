@@ -1,0 +1,820 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Objective-C," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="Accustoming Yourself to Objective-CItem 1: Familiarize Yourself With Objective-C’s Roots:Objc是C的超集，给C语言添加了面向对象的特性。Objc使用了动态绑定，对象的类型推迟到运行时决定。对于一个给定的消息，由Runtime而不是编译器决定运行哪个方法。 理解C语言的特性有助于写出高效的Objc代码，特别是">
+<meta name="keywords" content="Objective-C">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Effective Objective-C 2.0 读书笔记">
+<meta property="og:url" content="http://yoursite.com/2017/10/19/effective-objc/index.html">
+<meta property="og:site_name" content="刘怜苏">
+<meta property="og:description" content="Accustoming Yourself to Objective-CItem 1: Familiarize Yourself With Objective-C’s Roots:Objc是C的超集，给C语言添加了面向对象的特性。Objc使用了动态绑定，对象的类型推迟到运行时决定。对于一个给定的消息，由Runtime而不是编译器决定运行哪个方法。 理解C语言的特性有助于写出高效的Objc代码，特别是">
+<meta property="og:updated_time" content="2017-10-19T15:19:59.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Effective Objective-C 2.0 读书笔记">
+<meta name="twitter:description" content="Accustoming Yourself to Objective-CItem 1: Familiarize Yourself With Objective-C’s Roots:Objc是C的超集，给C语言添加了面向对象的特性。Objc使用了动态绑定，对象的类型推迟到运行时决定。对于一个给定的消息，由Runtime而不是编译器决定运行哪个方法。 理解C语言的特性有助于写出高效的Objc代码，特别是">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/10/19/effective-objc/"/>
+
+
+
+
+
+  <title>Effective Objective-C 2.0 读书笔记 | 刘怜苏</title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">刘怜苏</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/19/effective-objc/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Liu Jilong">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="刘怜苏">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Effective Objective-C 2.0 读书笔记</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-19T11:56:06+08:00">
+                2017-10-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Accustoming-Yourself-to-Objective-C"><a href="#Accustoming-Yourself-to-Objective-C" class="headerlink" title="Accustoming Yourself to Objective-C"></a>Accustoming Yourself to Objective-C</h1><h3 id="Item-1-Familiarize-Yourself-With-Objective-C’s-Roots"><a href="#Item-1-Familiarize-Yourself-With-Objective-C’s-Roots" class="headerlink" title="Item 1: Familiarize Yourself With Objective-C’s Roots:"></a>Item 1: Familiarize Yourself With Objective-C’s Roots:</h3><p>Objc是C的超集，给C语言添加了面向对象的特性。Objc使用了动态绑定，对象的类型推迟到运行时决定。<br>对于一个给定的消息，由Runtime而不是编译器决定运行哪个方法。</p>
+<p>理解C语言的特性有助于写出高效的Objc代码，特别是内存模型和指针。</p>
+<h3 id="Item-2：-Minimize-Importing-Headers-in-Headers"><a href="#Item-2：-Minimize-Importing-Headers-in-Headers" class="headerlink" title="Item 2： Minimize Importing Headers in Headers"></a>Item 2： Minimize Importing Headers in Headers</h3><p>使用前置声明（forword decalaring),而不是include头文件<br>在使用protocol时，无法使用前置声明。<br>这时候在extension中使用protocol，或者import一个只包含protocol的头文件。</p>
+<h3 id="Item-3-Prefer-Literal-Syntax-over-the-Equivalent-Methods"><a href="#Item-3-Prefer-Literal-Syntax-over-the-Equivalent-Methods" class="headerlink" title="Item 3: Prefer Literal Syntax over the Equivalent Methods"></a>Item 3: Prefer Literal Syntax over the Equivalent Methods</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">@<span class="string">"ok"</span>                    <span class="comment">// NSString</span></div><div class="line">@<span class="number">1</span>                       <span class="comment">// NSNumber</span></div><div class="line">@[@<span class="string">"1"</span>, @<span class="number">1</span>]              <span class="comment">// NSArray</span></div><div class="line">@&#123;@<span class="string">"1"</span>:@<span class="string">"2"</span>, @<span class="string">"2"</span>:@<span class="string">"4"</span>&#125;  <span class="comment">// NSDictionary</span></div></pre></td></tr></table></figure>
+<p>Literal Array 相对于<code>arrayWithObjests:</code>的优势：<br>如果array中传入的内容包括nil，那么Literal Array会crash，<br>而<code>arrayWithObjests</code>会创建一个包含nil之前元素的array。</p>
+<p>Literal Dictionary也有相同的问题。</p>
+<h3 id="Item-4-Prefer-Typed-Constants-to-Proprocessor-define"><a href="#Item-4-Prefer-Typed-Constants-to-Proprocessor-define" class="headerlink" title="Item 4: Prefer Typed Constants to Proprocessor #define"></a>Item 4: Prefer Typed Constants to Proprocessor #define</h3><p>内部常量：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">const</span> NSTimeInterval kAnimationDuration = <span class="number">0.3</span>;</div></pre></td></tr></table></figure></p>
+<p><code>static</code>表示常量只会在当前文件中，编译器不会为该常量创建一个外部符号。</p>
+<p>外部常量：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// In the header File</span></div><div class="line"><span class="keyword">extern</span> NSString *<span class="keyword">const</span> EOCStringConstant;</div><div class="line"></div><div class="line"><span class="comment">// In the implementation File</span></div><div class="line">NSString* <span class="keyword">const</span> EOCStringConstant = @<span class="string">"VALUE"</span>;</div></pre></td></tr></table></figure></p>
+<p>外部常量的命名需要符合objc的命名规范</p>
+<h3 id="Item-5-Using-Enumerations-for-States-Options-and-Status-Codes"><a href="#Item-5-Using-Enumerations-for-States-Options-and-Status-Codes" class="headerlink" title="Item 5 Using Enumerations for States, Options, and Status Codes"></a>Item 5 Using Enumerations for States, Options, and Status Codes</h3><p>使用枚举(enum)来表示状态：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">enum</span> EOCConnectionState &#123;</div><div class="line">  EOCConnectionStateDisconnected,</div><div class="line">  EOCConnectionStateConnecting,</div><div class="line">  EOCConnectionStateConnected,</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>定义enum:<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">enum</span> EOCConnectionState state = EOCConnectionStateConnected;</div></pre></td></tr></table></figure></p>
+<p>因此，通常使用在枚举定义中添加typedef:<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">enum</span> EOCConnectionState &#123;</div><div class="line">  EOCConnectionStateDisconnected,</div><div class="line">  EOCConnectionStateConnecting,</div><div class="line">  EOCConnectionStateConnected,</div><div class="line">&#125;</div><div class="line"><span class="keyword">typedef</span> <span class="keyword">enum</span> EOCConnectionState EOCConnectionState;</div><div class="line">EOCConnectionState state = EOCConnectionStateConnected;</div></pre></td></tr></table></figure></p>
+<p>Objc 提供了两个Macro： <code>NS_ENUM</code>和<code>NS_OPTIONS</code>,<br>两者的Macro展开方式在cplusplus下不一样。<br>如果需要使用bitwise OR操作，只能用<code>NS_OPTIONS</code>,使用<code>NS_ENUM</code>会触发错误。</p>
+<p>在switch语句判断enum类型时，不要使用default语句。<br>当enum中添加新的类型时，编译器会提出警告，switch没有覆盖所有的分支。</p>
+<h1 id="Objects-Messaging-and-the-Runtime"><a href="#Objects-Messaging-and-the-Runtime" class="headerlink" title="Objects, Messaging, and the Runtime"></a>Objects, Messaging, and the Runtime</h1><h3 id="Item-6-Understand-Properties"><a href="#Item-6-Understand-Properties" class="headerlink" title="Item 6: Understand Properties"></a>Item 6: Understand Properties</h3><p><code>@property</code>提供了一种封装数据和对象的方法<br>为property选择合适的attributes。</p>
+<h3 id="Item-7-Access-Instance-Variables-Primarily-Directly-When-Accessing-Them-Internally"><a href="#Item-7-Access-Instance-Variables-Primarily-Directly-When-Accessing-Them-Internally" class="headerlink" title="Item 7: Access Instance Variables Primarily Directly When Accessing Them Internally"></a>Item 7: Access Instance Variables Primarily Directly When Accessing Them Internally</h3><p>setter/getter方法和操作实例变量的区别：</p>
+<ol>
+<li>操作实例变量不会触发Objc的方法分发过程，直接获取对象的内存，因此会更快。</li>
+<li>操作实例变量绕过了setter/getter方法内存管理策略。</li>
+<li>操作实例变量不会触发KVO(Key-Value Observing)机制</li>
+<li>setter/getter方法更容易debug，因为可以在方法内部加断点。</li>
+</ol>
+<p>常用的策略：</p>
+<ol>
+<li>直接读取实例变量，使用setter方法进行写操作</li>
+<li>在init方法和dealloc方法中，直接操作实例变量进行读写</li>
+<li>lazy-init的数据，使用getter方法进行读操作</li>
+</ol>
+<h3 id="Item-8-Understand-Object-Equality"><a href="#Item-8-Understand-Object-Equality" class="headerlink" title="Item 8: Understand Object Equality"></a>Item 8: Understand Object Equality</h3><ol>
+<li>需要检测Equality时，需要同时提供<code>isEqual:</code>和<code>hash</code>方法。</li>
+<li>相等的对象需要有相同的hash，相同hash的对象不一定相等。</li>
+<li>谨慎地选择哪些属性来判断相等</li>
+<li>hash方法需要快速执行完毕，并且碰撞的概率较低。</li>
+</ol>
+<h3 id="Item-9-Use-the-Class-Cluster-Pattern-to-Hide-Implementation-Detail"><a href="#Item-9-Use-the-Class-Cluster-Pattern-to-Hide-Implementation-Detail" class="headerlink" title="Item 9: Use the Class Cluster Pattern to Hide Implementation Detail"></a>Item 9: Use the Class Cluster Pattern to Hide Implementation Detail</h3><p>Class Cluster pattern可以用来隐藏实现，在系统framework中大量使用。</p>
+<p>使用<code>isKindof</code>做类型判断，而不是<code>isMemberof</code>, 更不是<code>==</code></p>
+<h3 id="Item-10-Use-Associated-Objects-to-Attach-Custom-Data-to-Existing-Classes"><a href="#Item-10-Use-Associated-Objects-to-Attach-Custom-Data-to-Existing-Classes" class="headerlink" title="Item 10: Use Associated Objects to Attach Custom Data to Existing Classes"></a>Item 10: Use Associated Objects to Attach Custom Data to Existing Classes</h3><ol>
+<li>Associated objects 提供了一种把两个对象关联在一起的方式</li>
+<li>Associated objects 提供了类似于property的内存管理语义。</li>
+<li>只有在在其他方法不能实现时，再去用Associated objects，因为很可能出现bug</li>
+</ol>
+<h3 id="Item-11-Understand-the-Role-of-objc-msgSend"><a href="#Item-11-Understand-the-Role-of-objc-msgSend" class="headerlink" title="Item 11: Understand the Role of objc_msgSend"></a>Item 11: Understand the Role of objc_msgSend</h3><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">id</span> returnValue = [someObject messageName:parameter];</div><div class="line"></div><div class="line"><span class="keyword">id</span> returnValue = objc_msgSend(someObject, <span class="keyword">@selector</span>(messageName:), parameter);</div></pre></td></tr></table></figure>
+<p>在objc中一个消息调用被runtime转化成一个c函数。</p>
+<p>runtime会从someObject对应的类中查找selector的实现，如果没有找到实现，就会触发message forwarding的过程。</p>
+<p>objc_msgSend会缓存查找的过程，因此只有第一次调用会进过查找的过程。</p>
+<h3 id="Item-12-Understand-Message-Forwarding"><a href="#Item-12-Understand-Message-Forwarding" class="headerlink" title="Item 12: Understand Message Forwarding"></a>Item 12: Understand Message Forwarding</h3><p>Dynamic Method Resolution</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">+ (BOOL)resolveInstanceMethod:(SEL)selector;</div></pre></td></tr></table></figure>
+<p>这个方法会被调用，在方法的实现中，需要为类添加一个selector对应的实现，并返回YES，<br>或者返回NO，表示Dynamic Method Resolution失败。</p>
+<p>Replacement Receiver</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">- (id)forwardingTargetForSelector:(SEL)selector;</div></pre></td></tr></table></figure>
+<p>传入selector，方法接受者需要返回一个对象，由返回的对象来响应这个selector，<br>或者返回nil，表示ReplaceMent Receiver失败</p>
+<p>Full Forwarding Mechanism<br>将selector和parameters构造出NSInvocation对象，并触发方法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">- (void)forwardInvocation:(NSInvocation *)invocation;</div></pre></td></tr></table></figure></p>
+<h3 id="Item-13-Consider-Method-Swizzling-to-Debug-Opaque-Methods"><a href="#Item-13-Consider-Method-Swizzling-to-Debug-Opaque-Methods" class="headerlink" title="Item 13: Consider Method Swizzling to Debug Opaque Methods"></a>Item 13: Consider Method Swizzling to Debug Opaque Methods</h3><p>可以在runtime替换一个selector对应的实现。</p>
+<p>可以使用Method Swizzling来替换一个selector的实现，在原先的实现上添加更多的功能。</p>
+<h3 id="Item-14-Understand-What-a-Class-Object-is"><a href="#Item-14-Understand-What-a-Class-Object-is" class="headerlink" title="Item 14: Understand What a Class Object is"></a>Item 14: Understand What a Class Object is</h3><p>objc_object结构中有一个isa指针，指向对象的Class结构体。<br>objc_class结构中也有一个isa指针，指向Class的meta class</p>
+<p><code>isKindof:</code>和<code>isMemberof:</code>可以用来确定对象的Class</p>
+<h1 id="Interface-and-API-Design"><a href="#Interface-and-API-Design" class="headerlink" title="Interface and API Design"></a>Interface and API Design</h1><h3 id="Item-15-Using-Prefix-Names-to-Avoid-NameSpace-Clashes"><a href="#Item-15-Using-Prefix-Names-to-Avoid-NameSpace-Clashes" class="headerlink" title="Item 15: Using Prefix Names to Avoid NameSpace Clashes"></a>Item 15: Using Prefix Names to Avoid NameSpace Clashes</h3><p>需要命名空间前缀的命名：</p>
+<p>类名，protocol名，全局变量/常量，全局方法，系统类的category，category中的方法名</p>
+<h3 id="Item-16-Have-a-Designated-Initializer"><a href="#Item-16-Have-a-Designated-Initializer" class="headerlink" title="Item 16: Have a Designated Initializer"></a>Item 16: Have a Designated Initializer</h3><p>class需要一个Designated Initializer，并且需要文档进行标注。<br>所有其他的init方法都要调用这个方法进行初始化</p>
+<p>如果Designated Initializer与父类不一致，那么需要override父类的Designated Initializer</p>
+<p>子类中不能使用的init方法，要override并且抛出异常，或者标注NS_UNAVAILABLE.</p>
+<h3 id="Item-17-Implement-the-description-Method"><a href="#Item-17-Implement-the-description-Method" class="headerlink" title="Item 17: Implement the description Method"></a>Item 17: Implement the description Method</h3><p>一个很好的例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">- (NSString* ）description&#123;</div><div class="line">  return [NSString stringWithFormat:@&quot;&lt;%@:%p, %@&gt;&quot;,</div><div class="line">          [self class],</div><div class="line">          self,</div><div class="line">          @&#123;@&quot;title&quot;: _title,</div><div class="line">          @&quot;latitude&quot;:@(_latitude),</div><div class="line">          @&quot;longitude&quot;:@(_longitude)&#125;</div><div class="line">          ];</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>将class，指针类型打印出来，并将关键属性以Dictionary的形式打印。</p>
+<p>另外，console中调试指令po会触发’debugDescription’方法。</p>
+<h3 id="Item-18-Prefer-Immutable-Objects"><a href="#Item-18-Prefer-Immutable-Objects" class="headerlink" title="Item 18: Prefer Immutable Objects"></a>Item 18: Prefer Immutable Objects</h3><p>尽可能将对象设置为不可变的</p>
+<p>在h文件中设置readonly，在m文件中的extension设置readwrite</p>
+<p>对于可变的集合，给出一个方法返回Immutable集合，内部使用Mutable集合。</p>
+<h3 id="Item-19-Use-Clear-and-Consistent-Naming"><a href="#Item-19-Use-Clear-and-Consistent-Naming" class="headerlink" title="Item 19: Use Clear and Consistent Naming"></a>Item 19: Use Clear and Consistent Naming</h3><p>遵循Objc的命名规范， 方法名是准确并具体的，符合从左向右的阅读喜感，避免使用缩写，<br>与现有的代码保持相同的规范</p>
+<h3 id="Item-20-Prefix-Private-Method-Names"><a href="#Item-20-Prefix-Private-Method-Names" class="headerlink" title="Item 20: Prefix Private Method Names"></a>Item 20: Prefix Private Method Names</h3><p>给私有方法添加前缀，容易与公有方法做出区分</p>
+<p>避免使用下划线作为前缀，因为Apple会这么做。</p>
+<h3 id="Item-21-Understand-the-Objective-C-Error-Model"><a href="#Item-21-Understand-the-Objective-C-Error-Model" class="headerlink" title="Item 21: Understand the Objective-C Error Model"></a>Item 21: Understand the Objective-C Error Model</h3><p>在Objc中，很少会使用异常，只有在无法恢复，并且会导致应用退出的时候，才适合使用异常。</p>
+<p>对于其他的异常，可以通过返回nil/特定值来表示异常。</p>
+<p>另一种方式是使用NSError。</p>
+<h3 id="Item-22-Understand-the-NSCoping-Protocol"><a href="#Item-22-Understand-the-NSCoping-Protocol" class="headerlink" title="Item 22: Understand the NSCoping Protocol"></a>Item 22: Understand the <strong>NSCoping</strong> Protocol</h3><p>如果对象可以被复制，那么实现NSCoping协议</p>
+<p>如果对象有mutable和immutable版本，那么需要实现NSCoping和NSMutableCoping方法</p>
+<p>选择潜复制还是深复制</p>
+<p>如果需要深复制，添加一个deepCopy方法。</p>
+<h1 id="Protocols-and-Categories"><a href="#Protocols-and-Categories" class="headerlink" title="Protocols and Categories"></a>Protocols and Categories</h1><h3 id="Item-23-Use-Delegate-and-Data-Source-Protocols-for-Interobject-Communication"><a href="#Item-23-Use-Delegate-and-Data-Source-Protocols-for-Interobject-Communication" class="headerlink" title="Item 23: Use Delegate and Data Source Protocols for Interobject Communication"></a>Item 23: Use Delegate and Data Source Protocols for Interobject Communication</h3><p>Info Flow: DataSource -&gt; Class -&gt; Delegate</p>
+<p>如果有需要的话，实现一个bitfield结构，<br>缓存了一个delegate是否responseTo protocol的对应的方法。</p>
+<h3 id="Item-24-Use-Categories-to-Break-Class-Implementations-into-Manageable-Segments"><a href="#Item-24-Use-Categories-to-Break-Class-Implementations-into-Manageable-Segments" class="headerlink" title="Item 24: Use Categories to Break Class Implementations into Manageable Segments"></a>Item 24: Use Categories to Break Class Implementations into Manageable Segments</h3><p>使用category拆分功能，减少每个文件的长度。</p>
+<p>添加一个Private Category将内部接口和外部接口做区分。在framework中用到</p>
+<h3 id="Item-25-Always-Prefix-Category-Names-on-Third-Party-Classes"><a href="#Item-25-Always-Prefix-Category-Names-on-Third-Party-Classes" class="headerlink" title="Item 25: Always Prefix Category Names on Third-Party Classes"></a>Item 25: Always Prefix Category Names on Third-Party Classes</h3><p>category名和category中的方法名都要添加前缀。</p>
+<h3 id="Item-26-在Category中避免使用属性"><a href="#Item-26-在Category中避免使用属性" class="headerlink" title="Item 26: 在Category中避免使用属性"></a>Item 26: 在Category中避免使用属性</h3><p>所有的属性都应该声明在主类中。</p>
+<p>在category中添加实例变量可以通过associatedObject来实现</p>
+<h3 id="Item-27-Use-the-Class-Continuation-Category-to-Hide-Implementation-Detail"><a href="#Item-27-Use-the-Class-Continuation-Category-to-Hide-Implementation-Detail" class="headerlink" title="Item 27: Use the Class-Continuation Category to Hide Implementation Detail"></a>Item 27: Use the Class-Continuation Category to Hide Implementation Detail</h3><p>使用类Extension可以添加实力变量， 私有方法</p>
+<p>使用Extension可以声明</p>
+<p>可以在Extension中将readonly属性声明为readwrite，在内部允许修改</p>
+<h3 id="Item-28-Use-a-Protocol-to-Provide-Anonymous-Objects"><a href="#Item-28-Use-a-Protocol-to-Provide-Anonymous-Objects" class="headerlink" title="Item 28: Use a Protocol to Provide Anonymous Objects"></a>Item 28: Use a Protocol to Provide Anonymous Objects</h3><p>将Protocol作为函数参数和返回值能够提供一定成都的抽象。</p>
+<p>在类名必须被隐藏，或者类型与功能无关时，可以使用protocol代表的匿名对象。</p>
+<h1 id="Memory-Management"><a href="#Memory-Management" class="headerlink" title="Memory Management"></a>Memory Management</h1><h3 id="Item-29-Understand-Reference-Counting"><a href="#Item-29-Understand-Reference-Counting" class="headerlink" title="Item 29: Understand Reference Counting"></a>Item 29: Understand Reference Counting</h3><p>Objc使用引用计数做内存管理。</p>
+<p>会改变引用计数计数的操作：</p>
+<p>创建后的对象 retainCount 至少为1</p>
+<p><code>retain</code> retainCount +1</p>
+<p><code>release</code> retainCount -1</p>
+<p><code>autorelease</code> retainCount -1 when autorelease pool drained</p>
+<p>当对象的<code>retainCount</code>变成0的时候，这个对象就会被释放掉。</p>
+<h3 id="Item-30-Use-ARC-to-Make-Reference-Counting-Easier"><a href="#Item-30-Use-ARC-to-Make-Reference-Counting-Easier" class="headerlink" title="Item 30: Use ARC to Make Reference Counting Easier"></a>Item 30: Use ARC to Make Reference Counting Easier</h3><p>ARC在合适的位置添加retain和release，<br>变量的修饰符 <code>__strong</code>,<code>__weak</code>可以修改默认的内存管理策略。</p>
+<p>ARC只对Objc对象有效，CoreFoundation对象无效，需要自行调用CFRetain/CFRelease.</p>
+<h3 id="Item-31-Release-References-and-Clean-Up-Observation-State-Only-in-dealloc"><a href="#Item-31-Release-References-and-Clean-Up-Observation-State-Only-in-dealloc" class="headerlink" title="Item 31: Release References and Clean Up Observation State Only in dealloc"></a>Item 31: Release References and Clean Up Observation State Only in dealloc</h3><p>在<code>dealloc</code>方法中释放必要的资源，释放CoreFoundation对象，释放Observer等等。</p>
+<p>在<code>dealloc</code>中不能做异步调用，也不能做太耗时的操作</p>
+<p>如果对象持有系统资源，比如fd，socket等，应该提供一个方法释放这些资源，<br>并要求外部调用者在对象<code>dealloc</code>之前调用释放方法。</p>
+<h3 id="Item-32-Beware-of-Memory-Management-with-Exception-Safe-Code"><a href="#Item-32-Beware-of-Memory-Management-with-Exception-Safe-Code" class="headerlink" title="Item 32: Beware of Memory Management with Exception-Safe Code"></a>Item 32: Beware of Memory Management with Exception-Safe Code</h3><p>当捕获异常的时候，需要确保try语句中的对象被合理地释放</p>
+<p>当捕获异常时，默认不会处理对象的释放。如果开启了<code>-fobjc-arc-expections</code>,<br>能够很好地处理对象释放，但是会产生很多额外代码，并产生Runtime Cost.</p>
+<h3 id="Item-33-Use-Weak-References-to-Avoid-Retain-Cycles"><a href="#Item-33-Use-Weak-References-to-Avoid-Retain-Cycles" class="headerlink" title="Item 33: Use Weak References to Avoid Retain Cycles"></a>Item 33: Use Weak References to Avoid Retain Cycles</h3><p>循环引用可以通过<code>weak</code>和<code>unsafe_unretained</code>的方式来解决。</p>
+<p><code>weak</code>会被autonil， <code>unsafe_unretained</code>不会autonil。</p>
+<h3 id="Item-34-Use-Autorelease-Pool-Blocks-to-Reduce-High-Memory-Waterline"><a href="#Item-34-Use-Autorelease-Pool-Blocks-to-Reduce-High-Memory-Waterline" class="headerlink" title="Item 34: Use Autorelease Pool Blocks to Reduce High-Memory Waterline"></a>Item 34: Use Autorelease Pool Blocks to Reduce High-Memory Waterline</h3><p>Autorelease对象什么时候被释放：</p>
+<p>当前autoreleasepool被pop的时候。</p>
+<p>Cocoa中系统创建的线程，每次线程执行完一个event loop<br>都会执行异常autoreleasepool的drain操作。<br>autoreleasepool中的autorelease对象都会被释放。</p>
+<p>autoreleasepool组成一个stack结构，对象被添加在最顶层的autoreleasepool中。</p>
+<p>手动添加autoreleasepool,并在合适的时候pop，可以提前释放内存。</p>
+<h3 id="Item-35-Use-Zombies-to-Help-Debug-Memory-Management-Problems"><a href="#Item-35-Use-Zombies-to-Help-Debug-Memory-Management-Problems" class="headerlink" title="Item 35: Use Zombies to Help Debug Memory-Management Problems."></a>Item 35: Use Zombies to Help Debug Memory-Management Problems.</h3><p>向一个被dealloc的对象传递消息是不安全的。<br>因为对象的内存仍然有效，有可能已经被重写。<br>因此应用可能会crash，或者不正常地继续执行。</p>
+<p>Cocoa提供”Zombies”特性，开启后，dealloc的对象不会被释放，而是转化成一个zoombie对象。<br>向zombie对象发送消息时，会显示一段日志并跳入调试器。</p>
+<p>Zoombie的实现也很有意思，每个class都有一个对应的ZoombieClass，<br>这个ZoombieClass由默认的zoombieClass复制实现，并修改来classname.</p>
+<h3 id="Item-36-Avoid-Using-retainCount"><a href="#Item-36-Avoid-Using-retainCount" class="headerlink" title="Item 36: Avoid Using retainCount"></a>Item 36: Avoid Using retainCount</h3><p>在MRC情况下，retainCount并不准确，不能用于生成代码，也不能用来调试。</p>
+<p>在ARC情况下，retainCount被废弃了。</p>
+<h1 id="Blocks-and-Grand-Central-Dispatch"><a href="#Blocks-and-Grand-Central-Dispatch" class="headerlink" title="Blocks and Grand Central Dispatch"></a>Blocks and Grand Central Dispatch</h1><h3 id="Item-37-Understand-Blocks"><a href="#Item-37-Understand-Blocks" class="headerlink" title="Item 37: Understand Blocks"></a>Item 37: Understand Blocks</h3><p>block是一个对象，有对应的类型。<br>block的语法与函数指针很相似。<br>提供了闭包的功能。在block中可以使用block声明时可用的对象。</p>
+<p>修改这些对象需要对象具有<code>__block</code>属性。</p>
+<p>block有三种类型：<br> Global， 存储在数据区<br> Stack，  存储在栈上<br> Malloc， 存储在堆上。</p>
+<p>GlobalBlock： 在block内没有引用任何外部变量</p>
+<p>StackBlock：  在block内引用了外部变量</p>
+<p>MallocBlock:  对StackBlock进行copy操作，会变成MallocBlock， 存储区域发生变化。</p>
+<p>在MRC下，需要手动调用copy，转化为MallocBlock，<br>在ARC下，StackBlock赋值给强引用时，会自动调用copy.</p>
+<h3 id="Item-38-Create-typedefs-for-Common-Block-Types"><a href="#Item-38-Create-typedefs-for-Common-Block-Types" class="headerlink" title="Item 38: Create typedefs for Common Block Types"></a>Item 38: Create typedefs for Common Block Types</h3><p>block的声明比较难写，用typedef会简化使用</p>
+<p>在typedef时要注意命名规范</p>
+<p>对于同样类型的block，可以根据功能声明不同的typedef</p>
+<h3 id="Item-39-Use-Handler-Blocks-to-Reduce-Code-Separation"><a href="#Item-39-Use-Handler-Blocks-to-Reduce-Code-Separation" class="headerlink" title="Item 39: Use Handler Blocks to Reduce Code Separation"></a>Item 39: Use Handler Blocks to Reduce Code Separation</h3><p>使用handler block能够将相关的代码写在一起。</p>
+<p>当使用handler block时，最好能够允许传入queue，由调用者决定在传入的queue执行block</p>
+<h3 id="Item-40-Avoid-Retain-Cycles-Introduced-by-Blocks-Referencing-the-Object-Owning-Them"><a href="#Item-40-Avoid-Retain-Cycles-Introduced-by-Blocks-Referencing-the-Object-Owning-Them" class="headerlink" title="Item 40: Avoid Retain Cycles Introduced by Blocks Referencing the Object Owning Them."></a>Item 40: Avoid Retain Cycles Introduced by Blocks Referencing the Object Owning Them.</h3><p>block很容易引入循环引用</p>
+<h3 id="Item-41-Prefer-Dispatch-Queues-to-Locks-for-Synchronization"><a href="#Item-41-Prefer-Dispatch-Queues-to-Locks-for-Synchronization" class="headerlink" title="Item 41: Prefer Dispatch Queues to Locks for Synchronization"></a>Item 41: Prefer Dispatch Queues to Locks for Synchronization</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">- (NSString* )someString &#123;</div><div class="line">  @synchronized(self)&#123;</div><div class="line">    return _something;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (void) setSomething:(NSString* )something &#123;</div><div class="line">  @synchronized(self)&#123;</div><div class="line">    _something = something;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>可以使用Dispatch Queue来替代这个实现：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">_syncQueue = dispatch_queue_create(&quot;com.fff.xxx.syncQueue&quot;, NULL);</div><div class="line"></div><div class="line">- (NSString* )someString &#123;</div><div class="line">  __block NSString* localSomething;</div><div class="line">  dispatch_sync(_syncQueue, ^&#123;</div><div class="line">    localSomething = _something;</div><div class="line">  &#125;);</div><div class="line">  return localSomething;</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (void)setSomeString:(NSString* )someString &#123;</div><div class="line">  dispatch_sync(_syncQueue, ^&#123;</div><div class="line">    _someStirng = someString;</div><div class="line">  &#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>在这种情况下，setter方法可以做成异步的，因为setter方法并不需要返回值。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">- (void)setSomeString:(NSString* )someString &#123;</div><div class="line">  dispatch_async(_syncQueue, ^&#123;</div><div class="line">    _someStirng = someString;</div><div class="line">  &#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>使用barriar后，可以使用并发的队列：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">_syncQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);</div><div class="line"></div><div class="line">- (NSString* )someString &#123;</div><div class="line">  __block NSString* localSomething;</div><div class="line">  dispatch_sync(_syncQueue, ^&#123;</div><div class="line">    localSomething = _something;</div><div class="line">  &#125;);</div><div class="line">  return localSomething;</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (void)setSomeString:(NSString* )someString &#123;</div><div class="line">  dispatch_barriar_async(_syncQueue, ^&#123;</div><div class="line">    _someStirng = someString;</div><div class="line">  &#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="Item-42-Prefer-GCD-to-performSelector-and-Friends"><a href="#Item-42-Prefer-GCD-to-performSelector-and-Friends" class="headerlink" title="Item 42: Prefer GCD to performSelector and Friends"></a>Item 42: Prefer GCD to <code>performSelector</code> and Friends</h3><p><code>preformSelector</code>方法在内存管理方面可能会有风险。<br>并且对参数个数，返回值类型有限制<br>GCD提供更好的选择。</p>
+<h3 id="Item-43-Know-When-to-Use-GCD-and-When-to-Use-Operation-Queues"><a href="#Item-43-Know-When-to-Use-GCD-and-When-to-Use-Operation-Queues" class="headerlink" title="Item 43: Know When to Use GCD and When to Use Operation Queues"></a>Item 43: Know When to Use GCD and When to Use Operation Queues</h3><p>NSOperationQueue底层由GCD实现，提供类似的功能，不同点：</p>
+<p>NSOperationQueue提供cancel功能<br>NSOperationQueue提供依赖。<br>NSOperation的很多属性有KVO功能<br>NSOperation有优先级功能。<br>NSOperation子类具有很大的自由度，相对于block</p>
+<h3 id="Item-44-Use-Dispatch-Groups-to-Take-Advantage-of-Platform-Scaling"><a href="#Item-44-Use-Dispatch-Groups-to-Take-Advantage-of-Platform-Scaling" class="headerlink" title="Item 44: Use Dispatch Groups to Take Advantage of Platform Scaling"></a>Item 44: Use Dispatch Groups to Take Advantage of Platform Scaling</h3><p>dispatch_group可以用来做block同步。</p>
+<h3 id="Item-45-Use-dispatch-once-for-Thread-Safe-Single-Time-Code-Execution"><a href="#Item-45-Use-dispatch-once-for-Thread-Safe-Single-Time-Code-Execution" class="headerlink" title="Item 45: Use dispatch_once for Thread-Safe Single-Time Code Execution"></a>Item 45: Use dispatch_once for Thread-Safe Single-Time Code Execution</h3><p>GCD提供来一个容易使用的工具: dispatch_once, 效率更高</p>
+<p>token应该被声明为static or Global</p>
+<h3 id="Item-46-Avoid-dispatch-get-current-queue"><a href="#Item-46-Avoid-dispatch-get-current-queue" class="headerlink" title="Item 46: Avoid dispatch_get_current_queue"></a>Item 46: Avoid dispatch_get_current_queue</h3><p>dispatch_queue是一个层次结构，当前的queue不能通过一个简单的queue对象来表示。</p>
+<p>所以dispatch_get_current_queue不能很好地工作。</p>
+<h1 id="The-System-Framework"><a href="#The-System-Framework" class="headerlink" title="The System Framework"></a>The System Framework</h1><h3 id="Item-47-Familiarize-Yourself-with-the-System-Frameworks"><a href="#Item-47-Familiarize-Yourself-with-the-System-Frameworks" class="headerlink" title="Item 47: Familiarize Yourself with the System Frameworks"></a>Item 47: Familiarize Yourself with the System Frameworks</h3><h3 id="Item-48-Prefer-Block-Enumeration-to-for-Loops"><a href="#Item-48-Prefer-Block-Enumeration-to-for-Loops" class="headerlink" title="Item 48: Prefer Block Enumeration to for Loops"></a>Item 48: Prefer Block Enumeration to for Loops</h3><p>objc当前支持的Enumeration的方法：<br>for-loop<br>NSEnumerator<br>Fast Enumeration (for-in)<br>Block based Enumeration:  <code>enumerateObjectsUsingBlock:</code></p>
+<h3 id="Item-49-Use-Toll-Free-Bridging-for-Collections-with-Custom-Memory-Management-Sematics"><a href="#Item-49-Use-Toll-Free-Bridging-for-Collections-with-Custom-Memory-Management-Sematics" class="headerlink" title="Item 49: Use Toll-Free Bridging for Collections with Custom Memory-Management Sematics"></a>Item 49: Use Toll-Free Bridging for Collections with Custom Memory-Management Sematics</h3><p>在Foundation的objc对象和CoreFoundation对象之间可以进行toll-free bridging</p>
+<p>CoreFoundation对象支持更精细的内存管理</p>
+<h3 id="Item-50-Use-NSCache-Instead-of-NSDictionary-for-Caches"><a href="#Item-50-Use-NSCache-Instead-of-NSDictionary-for-Caches" class="headerlink" title="Item 50: Use NSCache Instead of NSDictionary for Caches"></a>Item 50: Use NSCache Instead of NSDictionary for Caches</h3><p>NSCache 保证了线程安全，并且不复制Keys</p>
+<h3 id="Item-51-Keep-initialize-and-load-Implementations-Lean"><a href="#Item-51-Keep-initialize-and-load-Implementations-Lean" class="headerlink" title="Item 51: Keep initialize and load Implementations Lean"></a>Item 51: Keep initialize and load Implementations Lean</h3><p>类在加载过程中会触发load方法，cateogory也有load方法，类的load会在category的load之前调用</p>
+<p>load不会被继承</p>
+<p>class第一次被使用时，会触发initialize方法，initialize方法会被继承。<br>这两个方法的实现应该尽量简单。</p>
+<h3 id="Item-52-Remember-that-NSTimer-Retains-Its-Target"><a href="#Item-52-Remember-that-NSTimer-Retains-Its-Target" class="headerlink" title="Item 52: Remember that NSTimer Retains Its Target"></a>Item 52: Remember that NSTimer Retains Its Target</h3><p>NSTimer持有target直到NSTimer失效。<br>可能引入循环引用。<br>扩展NSTimer，使用block可以打破循环引用。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Objective-C/" rel="tag"># Objective-C</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/06/30/PCA/" rel="next" title="主成分分析(PCA)">
+                <i class="fa fa-chevron-left"></i> 主成分分析(PCA)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="Liu Jilong" />
+          <p class="site-author-name" itemprop="name">Liu Jilong</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Accustoming-Yourself-to-Objective-C"><span class="nav-number">1.</span> <span class="nav-text">Accustoming Yourself to Objective-C</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Item-1-Familiarize-Yourself-With-Objective-C’s-Roots"><span class="nav-number">1.0.1.</span> <span class="nav-text">Item 1: Familiarize Yourself With Objective-C’s Roots:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Item-2：-Minimize-Importing-Headers-in-Headers"><span class="nav-number">1.0.2.</span> <span class="nav-text">Item 2： Minimize Importing Headers in Headers</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Item-3-Prefer-Literal-Syntax-over-the-Equivalent-Methods"><span class="nav-number">1.0.3.</span> <span class="nav-text">Item 3: Prefer Literal Syntax over the Equivalent Methods</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Item-4-Prefer-Typed-Constants-to-Proprocessor-define"><span class="nav-number">1.0.4.</span> <span class="nav-text">Item 4: Prefer Typed Constants to Proprocessor #define</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Item-5-Using-Enumerations-for-States-Options-and-Status-Codes"><span class="nav-number">1.0.5.</span> <span class="nav-text">Item 5 Using Enumerations for States, Options, and Status Codes</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Objects-Messaging-and-the-Runtime"><span class="nav-number">2.</span> <span class="nav-text">Objects, Messaging, and the Runtime</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Item-6-Understand-Properties"><span class="nav-number">2.0.1.</span> <span class="nav-text">Item 6: Understand Properties</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Item-7-Access-Instance-Variables-Primarily-Directly-When-Accessing-Them-Internally"><span class="nav-number">2.0.2.</span> <span class="nav-text">Item 7: Access Instance Variables Primarily Directly When Accessing Them Internally</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Item-8-Understand-Object-Equality"><span class="nav-number">2.0.3.</span> <span class="nav-text">Item 8: Understand Object Equality</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Item-9-Use-the-Class-Cluster-Pattern-to-Hide-Implementation-Detail"><span class="nav-number">2.0.4.</span> <span class="nav-text">Item 9: Use the Class Cluster Pattern to Hide Implementation Detail</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Item-10-Use-Associated-Objects-to-Attach-Custom-Data-to-Existing-Classes"><span class="nav-number">2.0.5.</span> <span class="nav-text">Item 10: Use Associated Objects to Attach Custom Data to Existing Classes</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Item-11-Understand-the-Role-of-objc-msgSend"><span class="nav-number">2.0.6.</span> <span class="nav-text">Item 11: Understand the Role of objc_msgSend</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Item-12-Understand-Message-Forwarding"><span class="nav-number">2.0.7.</span> <span class="nav-text">Item 12: Understand Message Forwarding</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Item-13-Consider-Method-Swizzling-to-Debug-Opaque-Methods"><span class="nav-number">2.0.8.</span> <span class="nav-text">Item 13: Consider Method Swizzling to Debug Opaque Methods</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Item-14-Understand-What-a-Class-Object-is"><span class="nav-number">2.0.9.</span> <span class="nav-text">Item 14: Understand What a Class Object is</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Interface-and-API-Design"><span class="nav-number">3.</span> <span class="nav-text">Interface and API Design</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Item-15-Using-Prefix-Names-to-Avoid-NameSpace-Clashes"><span class="nav-number">3.0.1.</span> <span class="nav-text">Item 15: Using Prefix Names to Avoid NameSpace Clashes</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Item-16-Have-a-Designated-Initializer"><span class="nav-number">3.0.2.</span> <span class="nav-text">Item 16: Have a Designated Initializer</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Item-17-Implement-the-description-Method"><span class="nav-number">3.0.3.</span> <span class="nav-text">Item 17: Implement the description Method</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Item-18-Prefer-Immutable-Objects"><span class="nav-number">3.0.4.</span> <span class="nav-text">Item 18: Prefer Immutable Objects</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Item-19-Use-Clear-and-Consistent-Naming"><span class="nav-number">3.0.5.</span> <span class="nav-text">Item 19: Use Clear and Consistent Naming</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Item-20-Prefix-Private-Method-Names"><span class="nav-number">3.0.6.</span> <span class="nav-text">Item 20: Prefix Private Method Names</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Item-21-Understand-the-Objective-C-Error-Model"><span class="nav-number">3.0.7.</span> <span class="nav-text">Item 21: Understand the Objective-C Error Model</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Item-22-Understand-the-NSCoping-Protocol"><span class="nav-number">3.0.8.</span> <span class="nav-text">Item 22: Understand the NSCoping Protocol</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Protocols-and-Categories"><span class="nav-number">4.</span> <span class="nav-text">Protocols and Categories</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Item-23-Use-Delegate-and-Data-Source-Protocols-for-Interobject-Communication"><span class="nav-number">4.0.1.</span> <span class="nav-text">Item 23: Use Delegate and Data Source Protocols for Interobject Communication</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Item-24-Use-Categories-to-Break-Class-Implementations-into-Manageable-Segments"><span class="nav-number">4.0.2.</span> <span class="nav-text">Item 24: Use Categories to Break Class Implementations into Manageable Segments</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Item-25-Always-Prefix-Category-Names-on-Third-Party-Classes"><span class="nav-number">4.0.3.</span> <span class="nav-text">Item 25: Always Prefix Category Names on Third-Party Classes</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Item-26-在Category中避免使用属性"><span class="nav-number">4.0.4.</span> <span class="nav-text">Item 26: 在Category中避免使用属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Item-27-Use-the-Class-Continuation-Category-to-Hide-Implementation-Detail"><span class="nav-number">4.0.5.</span> <span class="nav-text">Item 27: Use the Class-Continuation Category to Hide Implementation Detail</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Item-28-Use-a-Protocol-to-Provide-Anonymous-Objects"><span class="nav-number">4.0.6.</span> <span class="nav-text">Item 28: Use a Protocol to Provide Anonymous Objects</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Memory-Management"><span class="nav-number">5.</span> <span class="nav-text">Memory Management</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Item-29-Understand-Reference-Counting"><span class="nav-number">5.0.1.</span> <span class="nav-text">Item 29: Understand Reference Counting</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Item-30-Use-ARC-to-Make-Reference-Counting-Easier"><span class="nav-number">5.0.2.</span> <span class="nav-text">Item 30: Use ARC to Make Reference Counting Easier</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Item-31-Release-References-and-Clean-Up-Observation-State-Only-in-dealloc"><span class="nav-number">5.0.3.</span> <span class="nav-text">Item 31: Release References and Clean Up Observation State Only in dealloc</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Item-32-Beware-of-Memory-Management-with-Exception-Safe-Code"><span class="nav-number">5.0.4.</span> <span class="nav-text">Item 32: Beware of Memory Management with Exception-Safe Code</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Item-33-Use-Weak-References-to-Avoid-Retain-Cycles"><span class="nav-number">5.0.5.</span> <span class="nav-text">Item 33: Use Weak References to Avoid Retain Cycles</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Item-34-Use-Autorelease-Pool-Blocks-to-Reduce-High-Memory-Waterline"><span class="nav-number">5.0.6.</span> <span class="nav-text">Item 34: Use Autorelease Pool Blocks to Reduce High-Memory Waterline</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Item-35-Use-Zombies-to-Help-Debug-Memory-Management-Problems"><span class="nav-number">5.0.7.</span> <span class="nav-text">Item 35: Use Zombies to Help Debug Memory-Management Problems.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Item-36-Avoid-Using-retainCount"><span class="nav-number">5.0.8.</span> <span class="nav-text">Item 36: Avoid Using retainCount</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Blocks-and-Grand-Central-Dispatch"><span class="nav-number">6.</span> <span class="nav-text">Blocks and Grand Central Dispatch</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Item-37-Understand-Blocks"><span class="nav-number">6.0.1.</span> <span class="nav-text">Item 37: Understand Blocks</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Item-38-Create-typedefs-for-Common-Block-Types"><span class="nav-number">6.0.2.</span> <span class="nav-text">Item 38: Create typedefs for Common Block Types</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Item-39-Use-Handler-Blocks-to-Reduce-Code-Separation"><span class="nav-number">6.0.3.</span> <span class="nav-text">Item 39: Use Handler Blocks to Reduce Code Separation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Item-40-Avoid-Retain-Cycles-Introduced-by-Blocks-Referencing-the-Object-Owning-Them"><span class="nav-number">6.0.4.</span> <span class="nav-text">Item 40: Avoid Retain Cycles Introduced by Blocks Referencing the Object Owning Them.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Item-41-Prefer-Dispatch-Queues-to-Locks-for-Synchronization"><span class="nav-number">6.0.5.</span> <span class="nav-text">Item 41: Prefer Dispatch Queues to Locks for Synchronization</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Item-42-Prefer-GCD-to-performSelector-and-Friends"><span class="nav-number">6.0.6.</span> <span class="nav-text">Item 42: Prefer GCD to performSelector and Friends</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Item-43-Know-When-to-Use-GCD-and-When-to-Use-Operation-Queues"><span class="nav-number">6.0.7.</span> <span class="nav-text">Item 43: Know When to Use GCD and When to Use Operation Queues</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Item-44-Use-Dispatch-Groups-to-Take-Advantage-of-Platform-Scaling"><span class="nav-number">6.0.8.</span> <span class="nav-text">Item 44: Use Dispatch Groups to Take Advantage of Platform Scaling</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Item-45-Use-dispatch-once-for-Thread-Safe-Single-Time-Code-Execution"><span class="nav-number">6.0.9.</span> <span class="nav-text">Item 45: Use dispatch_once for Thread-Safe Single-Time Code Execution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Item-46-Avoid-dispatch-get-current-queue"><span class="nav-number">6.0.10.</span> <span class="nav-text">Item 46: Avoid dispatch_get_current_queue</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#The-System-Framework"><span class="nav-number">7.</span> <span class="nav-text">The System Framework</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Item-47-Familiarize-Yourself-with-the-System-Frameworks"><span class="nav-number">7.0.1.</span> <span class="nav-text">Item 47: Familiarize Yourself with the System Frameworks</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Item-48-Prefer-Block-Enumeration-to-for-Loops"><span class="nav-number">7.0.2.</span> <span class="nav-text">Item 48: Prefer Block Enumeration to for Loops</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Item-49-Use-Toll-Free-Bridging-for-Collections-with-Custom-Memory-Management-Sematics"><span class="nav-number">7.0.3.</span> <span class="nav-text">Item 49: Use Toll-Free Bridging for Collections with Custom Memory-Management Sematics</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Item-50-Use-NSCache-Instead-of-NSDictionary-for-Caches"><span class="nav-number">7.0.4.</span> <span class="nav-text">Item 50: Use NSCache Instead of NSDictionary for Caches</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Item-51-Keep-initialize-and-load-Implementations-Lean"><span class="nav-number">7.0.5.</span> <span class="nav-text">Item 51: Keep initialize and load Implementations Lean</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Item-52-Remember-that-NSTimer-Retains-Its-Target"><span class="nav-number">7.0.6.</span> <span class="nav-text">Item 52: Remember that NSTimer Retains Its Target</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Liu Jilong</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

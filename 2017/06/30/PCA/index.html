@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="机器学习 python," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -90,19 +90,16 @@
 
 
 
-<meta name="description" content="KNN算法介绍KNN（K Nearest Neighbour, k近邻法）是一种基础的分类算法。分类算法分两个步骤：拟合和预测，首先将使用训练数据进行拟合，然后使用拟合的模型对测试数据进行预测。很多分类方法（比如逻辑回归，支持状态机）会从训练数据中学习得到一个范化的模型，然后使用模型对测试数据进行分类。KNN在拟合的过程只是简单地将输入和输出数据保存下来。分类算法集中在预测步骤中。 KNN算法简单">
-<meta name="keywords" content="机器学习 python">
+<meta name="description" content="主成分分析是特征工程中对数据进行处理对过程。处理得到的结果是数据中最重要的纬度，舍弃不重要的纬度。 举个简单的例子，对于一组数据（1,0), (2,0) (3,0)。 这组数据有两个纬度，但是第二个纬度都为零。可以把第二个纬度数据完全删除而不丢失信息。 这里需要一个衡量纬度重要程度的量：方差。数据在一个纬度上的方差越大，这个纬度越重要。对于上面这组数据。第一个纬度上的方差为2，第二个纬度的方差为0">
 <meta property="og:type" content="article">
-<meta property="og:title" content="使用python实现KNN算法">
-<meta property="og:url" content="http://yoursite.com/2017/05/26/knn/index.html">
+<meta property="og:title" content="主成分分析(PCA)">
+<meta property="og:url" content="http://yoursite.com/2017/06/30/PCA/index.html">
 <meta property="og:site_name" content="刘怜苏">
-<meta property="og:description" content="KNN算法介绍KNN（K Nearest Neighbour, k近邻法）是一种基础的分类算法。分类算法分两个步骤：拟合和预测，首先将使用训练数据进行拟合，然后使用拟合的模型对测试数据进行预测。很多分类方法（比如逻辑回归，支持状态机）会从训练数据中学习得到一个范化的模型，然后使用模型对测试数据进行分类。KNN在拟合的过程只是简单地将输入和输出数据保存下来。分类算法集中在预测步骤中。 KNN算法简单">
-<meta property="og:image" content="http://tuchang-1253208593.costj.myqcloud.com/440px-KnnClassification.svg.png">
-<meta property="og:updated_time" content="2017-05-26T10:54:02.000Z">
+<meta property="og:description" content="主成分分析是特征工程中对数据进行处理对过程。处理得到的结果是数据中最重要的纬度，舍弃不重要的纬度。 举个简单的例子，对于一组数据（1,0), (2,0) (3,0)。 这组数据有两个纬度，但是第二个纬度都为零。可以把第二个纬度数据完全删除而不丢失信息。 这里需要一个衡量纬度重要程度的量：方差。数据在一个纬度上的方差越大，这个纬度越重要。对于上面这组数据。第一个纬度上的方差为2，第二个纬度的方差为0">
+<meta property="og:updated_time" content="2017-07-01T08:27:15.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="使用python实现KNN算法">
-<meta name="twitter:description" content="KNN算法介绍KNN（K Nearest Neighbour, k近邻法）是一种基础的分类算法。分类算法分两个步骤：拟合和预测，首先将使用训练数据进行拟合，然后使用拟合的模型对测试数据进行预测。很多分类方法（比如逻辑回归，支持状态机）会从训练数据中学习得到一个范化的模型，然后使用模型对测试数据进行分类。KNN在拟合的过程只是简单地将输入和输出数据保存下来。分类算法集中在预测步骤中。 KNN算法简单">
-<meta name="twitter:image" content="http://tuchang-1253208593.costj.myqcloud.com/440px-KnnClassification.svg.png">
+<meta name="twitter:title" content="主成分分析(PCA)">
+<meta name="twitter:description" content="主成分分析是特征工程中对数据进行处理对过程。处理得到的结果是数据中最重要的纬度，舍弃不重要的纬度。 举个简单的例子，对于一组数据（1,0), (2,0) (3,0)。 这组数据有两个纬度，但是第二个纬度都为零。可以把第二个纬度数据完全删除而不丢失信息。 这里需要一个衡量纬度重要程度的量：方差。数据在一个纬度上的方差越大，这个纬度越重要。对于上面这组数据。第一个纬度上的方差为2，第二个纬度的方差为0">
 
 
 
@@ -130,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/05/26/knn/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/06/30/PCA/"/>
 
 
 
 
 
-  <title>使用python实现KNN算法 | 刘怜苏</title>
+  <title>主成分分析(PCA) | 刘怜苏</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -255,7 +252,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/26/knn/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/30/PCA/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Liu Jilong">
@@ -272,7 +269,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">使用python实现KNN算法</h1>
+          <h1 class="post-title" itemprop="name headline">主成分分析(PCA)</h1>
         
 
         <div class="post-meta">
@@ -284,8 +281,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-26T17:04:19+08:00">
-                2017-05-26
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-30T20:57:27+08:00">
+                2017-06-30
               </time>
             
 
@@ -319,13 +316,26 @@
       
 
       
-        <h2 id="KNN算法介绍"><a href="#KNN算法介绍" class="headerlink" title="KNN算法介绍"></a>KNN算法介绍</h2><p>KNN（K Nearest Neighbour, k近邻法）是一种基础的分类算法。<br>分类算法分两个步骤：拟合和预测，<br>首先将使用训练数据进行拟合，<br>然后使用拟合的模型对测试数据进行预测。<br>很多分类方法（比如逻辑回归，支持状态机）会从训练数据中学习得到一个范化的模型，<br>然后使用模型对测试数据进行分类。KNN在拟合的过程只是简单地将输入和输出数据保存下来。<br>分类算法集中在预测步骤中。</p>
-<p>KNN算法简单，直接。给定一个训练数据集。对于测试实例，在训练数据集中寻找到距离测试实例最近的<br>K个实例。这K个实例按分类进行投票，票数最多的分类就是测试数据的分类。</p>
-<p><img src="http://tuchang-1253208593.costj.myqcloud.com/440px-KnnClassification.svg.png" alt=""></p>
-<p>对于上图给出的数据。红色和蓝色点为训练数据集，不同颜色代表两个不同的分类。绿色点为测试实例。<br>在K=3的情况下，实线圈内的三个训练实例是离测试实例最近的，<br>按照KNN的投票方案，绿色测试实例的类别为红色。<br>而在K=5的情况下，则虚线圈内的五个实例进行投票，绿色测试实例的类别为蓝色。</p>
-<h2 id="KNN算法特点"><a href="#KNN算法特点" class="headerlink" title="KNN算法特点"></a>KNN算法特点</h2><h4 id="K的选择"><a href="#K的选择" class="headerlink" title="K的选择"></a>K的选择</h4><p>不同的K值会对分类结果产生影响。选择合适的K值取决于训练数据的特点。<br>较小的K值能更好地拟合训练数据的特点，同时会带来严重的过拟合问题。<br>较大的K值能减少噪声的影响，但是也会削弱类别之间的界限。</p>
-<p>对于具体数据，K的选择通常需要超参数优化来完成。</p>
-<h4 id="距离"><a href="#距离" class="headerlink" title="距离"></a>距离</h4>
+        <p>主成分分析是特征工程中对数据进行处理对过程。处理得到的结果是数据中最重要的纬度，舍弃不重要的纬度。</p>
+<p>举个简单的例子，对于一组数据（1,0), (2,0) (3,0)。 这组数据有两个纬度，<br>但是第二个纬度都为零。可以把第二个纬度数据完全删除而不丢失信息。</p>
+<p>这里需要一个衡量纬度重要程度的量：方差。数据在一个纬度上的方差越大，这个纬度越重要。对于上面这组数据。第一个纬度上的方差为2，第二个纬度的方差为0.在进行主成分分析时，第二个纬度被舍弃。</p>
+<p>对于未知的数据，各个纬度的方差可能差距不大，需要对数据做线性变换，使得不同纬度的方差变化较大。<br>第一个纬度的方差最大，最后一个纬度的方差最小。同时不同纬度的数据没有相关性。</p>
+<p>不同维度的相关性用协方差来表示：</p>
+<p>$$Cov(X,Y) = E[(X-\mu_x)(Y-\mu_y)]$$</p>
+<p>方差：</p>
+<p>$$Var(X) = E[(X-\mu_x)^2]$$</p>
+<p>对于一组数据$X<em>{M*N}$, $M$为特征的个数，$N$为样本的个数。$X</em>{m<em>n}$表示第$n$个样本第$m$个特征的值。执行PCA过程后得到数据$Y_{M</em>N}$.<br>$M$不同特征的数据协方差为0，$Y$的第一个纬度的方差最大，最后一个纬度的方差最小。</p>
+<p>假设矩阵$X$进行过中心化后，即$\sum_mX_m=0$，那么每个纬度的方差可以表示为：<br>$$Var(X_m) = \frac{1}{N}\sum<em>nX</em>{mn}^2 \qquad  (m=0,1,2,…,M)$$<br>不同纬度的协方差可以表示为<br>$$Cov(X_{m<em>1},X</em>{m_2}) = \frac{1}{n}\sum<em>nX</em>{m<em>1n}X</em>{m_2n} \qquad (m_1,m_2=0,1,2,…,M)$$</p>
+<p>矩阵$X$不同纬度方差和协方差可以很方便地在$XX^T$中表示。<br>$$(XX^T)_{m,m} = Var(X<em>m)$$<br>$$(XX^T)</em>{m_1,m<em>2} = Cov(X</em>{m<em>1},X</em>{m_2})$$</p>
+<p>选择合适地线性变换矩阵$P$，$Y<em>{Y*N} = P</em>{Y<em>M}</em>X_{M,N}$,使得$(PX)(PX)^T$为对角矩阵。</p>
+<p>这对应于对$XX^T$的对角化。</p>
+<p>$XX^T$就称为$X$的协方差矩阵。PCA的过程等价于协方差矩阵的对角化过程。</p>
+<p>问题：对角化矩阵唯一吗？</p>
+<p>在域$F$上的矩阵$A_{N*N}$是可对角化的，当且仅当它的特征空间纬度等于$N$，当且仅当A有$N<br>个特征值，并且对应当特征向量组成向量空间的一组基。</p>
+<p>如果找到了这样的一组基，可以将基作为纵列，按特征值大小依次排列成矩阵$P$，那么$P^{-1}AP$是对角矩阵，对角线元素为对应的特征值。</p>
+<p>$P$便是<code>PCA</code>过程中的变换矩阵，$P^{-1}AP$便是PCA得到的结果，选取较大的K个特征值得到对应的主成分。</p>
+<p>PCA是一个信息提取的过程，将原始数据降维，<br>ICA认为观测信号是若干个统计独立的分量的线性组合，ICA要做的是一个解混过程</p>
+
       
     </div>
 
@@ -352,12 +362,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/机器学习-python/" rel="tag"># 机器学习 python</a>
-          
-        </div>
-      
 
       
         
@@ -367,8 +371,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/05/04/弹幕/" rel="next" title="Mac弹幕库BarrageRenderer代码解读">
-                <i class="fa fa-chevron-left"></i> Mac弹幕库BarrageRenderer代码解读
+              <a href="/2017/05/26/knn/" rel="next" title="使用python实现KNN算法">
+                <i class="fa fa-chevron-left"></i> 使用python实现KNN算法
               </a>
             
           </div>
@@ -377,8 +381,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/06/30/PCA/" rel="prev" title="主成分分析(PCA)">
-                主成分分析(PCA) <i class="fa fa-chevron-right"></i>
+              <a href="/2017/10/19/effective-objc/" rel="prev" title="Effective Objective-C 2.0 读书笔记">
+                Effective Objective-C 2.0 读书笔记 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -426,17 +430,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -489,22 +484,6 @@
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#KNN算法介绍"><span class="nav-number">1.</span> <span class="nav-text">KNN算法介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#KNN算法特点"><span class="nav-number">2.</span> <span class="nav-text">KNN算法特点</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#K的选择"><span class="nav-number">2.0.1.</span> <span class="nav-text">K的选择</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#距离"><span class="nav-number">2.0.2.</span> <span class="nav-text">距离</span></a></li></ol></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
